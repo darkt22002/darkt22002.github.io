@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gary Floyd - Systems Engineer</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f4f4f4;
+        }
+        
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+        
+        header h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+        }
+        
+        header p {
+            font-size: 1.3em;
+            margin-bottom: 30px;
+        }
+        
+        .contact-links {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .contact-links a {
+            background: rgba(255,255,255,0.2);
+            color: white;
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+        
+        .contact-links a:hover {
+            background: rgba(255,255,255,0.3);
+        }
+        
+        section {
+            background: white;
+            margin: 40px auto;
+            padding: 50px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        h2 {
+            color: #667eea;
+            font-size: 2.2em;
+            margin-bottom: 30px;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 10px;
+        }
+        
+        .about-text {
+            font-size: 1.1em;
+            line-height: 1.8;
+            color: #555;
+        }
+        
+        .project {
+            margin-bottom: 40px;
+            padding-bottom: 40px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .project:last-child {
+            border-bottom: none;
+        }
+        
+        .project h3 {
+            color: #764ba2;
+            font-size: 1.8em;
+            margin-bottom: 15px;
+        }
+        
+        .project p {
+            font-size: 1.1em;
+            line-height: 1.8;
+            color: #666;
+            margin-bottom: 15px;
+        }
+        
+        .project ul {
+            margin-left: 20px;
+            color: #666;
+        }
+        
+        .project ul li {
+            margin-bottom: 8px;
+        }
+        
+        .project img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-top: 20px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+        }
+        
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        
+        .skill-category {
+            background: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+        }
+        
+        .skill-category h3 {
+            color: #667eea;
+            margin-bottom: 15px;
+        }
+        
+        .skill-category ul {
+            list-style: none;
+        }
+        
+        .skill-category li {
+            padding: 5px 0;
+            color: #666;
+        }
+        
+        .skill-category li:before {
+            content: "▹ ";
+            color: #764ba2;
+            font-weight: bold;
+        }
+        
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 30px 0;
+            margin-top: 50px;
+        }
+        
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2em;
+            }
+            
+            header p {
+                font-size: 1.1em;
+            }
+            
+            section {
+                padding: 30px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Gary Floyd</h1>
+            <p>Systems Engineer | AI Infrastructure | Industrial Automation</p>
+            <p style="font-size: 1.1em; margin-bottom: 20px;">25+ Years Building Complex Solutions from First Principles</p>
+            <div class="contact-links">
+                <a href="mailto:darkt22002@gmail.com">Email</a>
+                <a href="https://www.linkedin.com/in/gary-floyd-434862124/" target="_blank">LinkedIn</a>
+                <a href="https://github.com/darkt22002" target="_blank">GitHub</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <section id="about">
+            <h2>About</h2>
+            <div class="about-text">
+                <p>Multi-disciplinary systems engineer with 25+ years building complex automation, networking, and AI systems. I solve problems that require crossing traditional boundaries—from low-level firmware to distributed AI architectures, from industrial PLCs to neural networks.</p>
+                
+                <p>My approach: understand systems from first principles, learn whatever's needed, and build working solutions. Whether it's architecting a 120-core distributed AI cluster, programming FDA-compliant manufacturing lines, or fabricating custom CNC machines from cast aluminum, I focus on solving hard problems with practical, maintainable solutions.</p>
+                
+                <p>Currently available for contract work in AI infrastructure, industrial automation, and systems integration.</p>
+            </div>
+        </section>
+
+        <section id="projects">
+            <h2>Featured Projects</h2>
+            
+            <div class="project">
+                <h3>Nexus AI - Distributed Memory Architecture</h3>
+                <p>Designed and deployed a production-grade distributed AI system implementing Guided Entropy Processing (GEP) for semantic memory and multi-model orchestration.</p>
+                <ul>
+                    <li><strong>120+ CPU cores</strong> across multi-node cluster (HP DL380p, Dell R810, custom workstation)</li>
+                    <li><strong>40+ LLM models</strong> with intelligent routing and task-specific selection</li>
+                    <li><strong>94,000+ semantic chunks</strong> indexed with GEP-weighted relevance scoring</li>
+                    <li><strong>Autonomous node operation</strong> with cross-node memory synchronization</li>
+                    <li><strong>GPU acceleration</strong> via Tesla K80 (5000+ CUDA cores)</li>
+                    <li>Custom web interface for real-time system monitoring and interaction</li>
+                    <li>PostgreSQL-based ethical filtering using Truth/Openness/Accountability principles</li>
+                    <li>Published research on AI memory architecture and failure modes</li>
+                </ul>
+                <p><strong>Technologies:</strong> Python, Debian Linux, MariaDB, PostgreSQL, MongoDB, Redis, MQTT, Docker, Custom LLM orchestration, Embedding models (nomic, Jina, Qwen, Mistral)</p>
+            </div>
+
+            <div class="project">
+                <h3>Industrial Automation & Robotics Integration</h3>
+                <p>Engineered automation frameworks across food processing, packaging, and manufacturing sectors with FDA/USDA compliance.</p>
+                <ul>
+                    <li>Designed and programmed multi-vendor PLC systems (Rockwell RSLogix, Siemens TIA, Omron Sysmac, Beckhoff TwinCAT)</li>
+                    <li>Integrated robotic work cells using Fanuc, ABB, and Mitsubishi industrial robots</li>
+                    <li>Built SCADA systems for process monitoring and optimization</li>
+                    <li>Implemented predictive maintenance using AI-mechanical hybrid systems</li>
+                    <li>Developed workflow orchestration for dynamic production adaptation</li>
+                    <li>Led Scrum-based automation teams with Git-integrated CI/CD pipelines</li>
+                </ul>
+                <p><strong>Technologies:</strong> Ladder Logic, Structured Text, Function Block, OPC-UA, HMI design, Motion Control, Safety PLCs</p>
+            </div>
+
+            <div class="project">
+                <h3>Custom CNC Manufacturing System</h3>
+                <p>Designed and fabricated precision CNC machine from first principles, including metallurgical processes and mechanical engineering.</p>
+                <ul>
+                    <li>Built greensand casting setup and electric furnace for aluminum recycling</li>
+                    <li>Cast aluminum components from recycled materials (soda cans, 6061 drops)</li>
+                    <li>Machined precision parts using self-built equipment</li>
+                    <li>2.4kW spindle with dual ball screw drives on all axes</li>
+                    <li>Full G-code programming and CAM workflow integration</li>
+                    <li>Used initial MPCNC to machine upgrades for final production system</li>
+                </ul>
+                <p><strong>Technologies:</strong> CAD/CAM, G-code, Stepper/Servo control, Aluminum casting, Precision machining</p>
+            </div>
+
+            <div class="project">
+                <h3>High-Temperature 3D Printing Systems</h3>
+                <p>Built custom 3D printing systems capable of engineering-grade thermoplastic fabrication.</p>
+                <ul>
+                    <li>Manta M8P controller with CB1 Raspberry Pi modules</li>
+                    <li>530°C constant-temperature extruder for PEEK printing</li>
+                    <li>Custom firmware configuration and calibration</li>
+                    <li>Capable of printing engineering-grade materials for functional prototypes</li>
+                </ul>
+                <p><strong>Technologies:</strong> Klipper firmware, Python, 3D printer mechanics, High-temp material science</p>
+            </div>
+        </section>
+
+        <section id="skills">
+            <h2>Technical Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>AI & Machine Learning</h3>
+                    <ul>
+                        <li>LLM Orchestration (40+ models)</li>
+                        <li>Vector Databases & Embeddings</li>
+                        <li>Semantic Search & Retrieval</li>
+                        <li>GPU Computing (CUDA)</li>
+                        <li>Distributed AI Systems</li>
+                        <li>AI Safety & Ethics</li>
+                    </ul>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>Programming</h3>
+                    <ul>
+                        <li>Python (Primary)</li>
+                        <li>C++ / C# / Java</li>
+                        <li>SQL (PostgreSQL, MySQL, MSSQL)</li>
+                        <li>Ladder Logic & Structured Text</li>
+                        <li>Bash / Shell Scripting</li>
+                        <li>VBScript / Perl</li>
+                    </ul>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>Infrastructure</h3>
+                    <ul>
+                        <li>Linux (Debian, Red Hat)</li>
+                        <li>Windows Server</li>
+                        <li>Docker / VMware</li>
+                        <li>Network Architecture (LAN/WAN)</li>
+                        <li>Cisco IOS / Firewalls</li>
+                        <li>VPN / VLAN / QoS</li>
+                    </ul>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>Automation & Robotics</h3>
+                    <ul>
+                        <li>Rockwell RSLogix / Studio 5000</li>
+                        <li>Siemens TIA Portal</li>
+                        <li>Omron Sysmac Studio</li>
+                        <li>Beckhoff TwinCAT</li>
+                        <li>ABB RobotStudio</li>
+                        <li>SCADA Integration</li>
+                    </ul>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>Databases</h3>
+                    <ul>
+                        <li>PostgreSQL</li>
+                        <li>MariaDB / MySQL</li>
+                        <li>MongoDB</li>
+                        <li>Redis</li>
+                        <li>SQLite</li>
+                        <li>Oracle 8i/9i</li>
+                    </ul>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>Tools & Design</h3>
+                    <ul>
+                        <li>Git / GitHub</li>
+                        <li>AutoCAD Electrical</li>
+                        <li>SolidWorks</li>
+                        <li>Visual Studio / VS Code</li>
+                        <li>Wireshark</li>
+                        <li>G-code / CAM Software</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2>Get In Touch</h2>
+            <div class="about-text">
+                <p>I'm available for contract work, consulting, and full-time opportunities in AI infrastructure, industrial automation, and systems engineering.</p>
+                <p>Whether you need distributed AI architecture, manufacturing automation, or someone who can cross traditional engineering boundaries to solve complex problems—let's talk.</p>
+                <p style="margin-top: 30px;">
+                    <strong>Email:</strong> <a href="mailto:darkt22002@gmail.com" style="color: #667eea;">darkt22002@gmail.com</a><br>
+                    <strong>Phone:</strong> 208-747-7044<br>
+                    <strong>Location:</strong> New Caney, Texas
+                </p>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Gary Floyd. Available for contract work and full-time opportunities.</p>
+        </div>
+    </footer>
+</body>
+</html>
