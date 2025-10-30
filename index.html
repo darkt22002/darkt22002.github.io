@@ -3,178 +3,270 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gary Floyd - Systems Engineer</title>
+    <title>Gary W. Floyd - Systems Engineer & AI Architect</title>
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        
+
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
             line-height: 1.6;
             color: #333;
-            background: #f4f4f4;
+            background: #f5f5f5;
         }
-        
+
         .container {
-            max-width: 1100px;
+            max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
         }
-        
+
         header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
             color: white;
-            padding: 80px 0;
+            padding: 60px 0 40px;
             text-align: center;
         }
-        
+
         header h1 {
             font-size: 3em;
             margin-bottom: 10px;
+            font-weight: 700;
         }
-        
-        header p {
+
+        header .tagline {
             font-size: 1.3em;
-            margin-bottom: 30px;
+            margin-bottom: 20px;
+            opacity: 0.95;
+            font-weight: 300;
         }
-        
-        .contact-links {
-            display: flex;
-            gap: 20px;
-            justify-content: center;
-            flex-wrap: wrap;
+
+        header .contact-info {
+            margin-top: 20px;
+            font-size: 1.1em;
         }
-        
-        .contact-links a {
-            background: rgba(255,255,255,0.2);
+
+        header .contact-info a {
             color: white;
-            padding: 12px 25px;
             text-decoration: none;
-            border-radius: 5px;
-            transition: background 0.3s;
+            margin: 0 15px;
+            border-bottom: 2px solid rgba(255,255,255,0.3);
+            transition: border-color 0.3s;
         }
-        
-        .contact-links a:hover {
-            background: rgba(255,255,255,0.3);
+
+        header .contact-info a:hover {
+            border-color: white;
         }
-        
+
+        .intro {
+            background: white;
+            padding: 50px 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .intro-content {
+            max-width: 900px;
+            margin: 0 auto;
+            font-size: 1.2em;
+            line-height: 1.8;
+        }
+
+        .intro-content strong {
+            color: #1e3c72;
+            font-weight: 600;
+        }
+
         section {
             background: white;
-            margin: 40px auto;
-            padding: 50px;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            margin: 30px 0;
+            padding: 50px 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
-        
-        h2 {
-            color: #667eea;
-            font-size: 2.2em;
+
+        section h2 {
+            font-size: 2.5em;
             margin-bottom: 30px;
-            border-bottom: 3px solid #667eea;
+            color: #1e3c72;
+            border-bottom: 3px solid #2a5298;
             padding-bottom: 10px;
         }
-        
-        .about-text {
-            font-size: 1.1em;
-            line-height: 1.8;
-            color: #555;
-        }
-        
-        .project {
-            margin-bottom: 40px;
-            padding-bottom: 40px;
-            border-bottom: 1px solid #eee;
-        }
-        
-        .project:last-child {
-            border-bottom: none;
-        }
-        
-        .project h3 {
-            color: #764ba2;
+
+        section h3 {
             font-size: 1.8em;
-            margin-bottom: 15px;
+            margin: 30px 0 15px;
+            color: #2a5298;
         }
-        
-        .project p {
+
+        section h4 {
+            font-size: 1.3em;
+            margin: 20px 0 10px;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .timeline {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .timeline-item {
+            margin: 25px 0;
+            padding-left: 30px;
+            border-left: 3px solid #2a5298;
+            position: relative;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -8px;
+            top: 5px;
+            width: 13px;
+            height: 13px;
+            border-radius: 50%;
+            background: #2a5298;
+        }
+
+        .timeline-item strong {
+            color: #1e3c72;
             font-size: 1.1em;
-            line-height: 1.8;
-            color: #666;
-            margin-bottom: 15px;
         }
-        
-        .project ul {
-            margin-left: 20px;
-            color: #666;
-        }
-        
-        .project ul li {
-            margin-bottom: 8px;
-        }
-        
-        .project img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 8px;
-            margin-top: 20px;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.2);
-        }
-        
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-        }
-        
-        .skill-category {
+
+        .project-card {
             background: #f9f9f9;
-            padding: 20px;
+            padding: 30px;
+            margin: 25px 0;
             border-radius: 8px;
-            border-left: 4px solid #667eea;
+            border-left: 5px solid #2a5298;
         }
-        
-        .skill-category h3 {
-            color: #667eea;
-            margin-bottom: 15px;
+
+        .project-card h3 {
+            margin-top: 0;
+            color: #1e3c72;
         }
-        
-        .skill-category ul {
-            list-style: none;
+
+        .tech-tags {
+            margin: 15px 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
         }
-        
-        .skill-category li {
-            padding: 5px 0;
-            color: #666;
+
+        .tech-tag {
+            background: #e3e9f5;
+            color: #1e3c72;
+            padding: 5px 12px;
+            border-radius: 15px;
+            font-size: 0.9em;
+            font-weight: 500;
         }
-        
-        .skill-category li:before {
-            content: "▹ ";
-            color: #764ba2;
-            font-weight: bold;
+
+        .equation {
+            background: #f0f4f8;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 5px;
+            font-family: 'Courier New', monospace;
+            font-size: 1.3em;
+            text-align: center;
+            color: #1e3c72;
+            border-left: 5px solid #2a5298;
         }
-        
+
+        .highlight-box {
+            background: linear-gradient(135deg, #667eea15 0%, #764ba215 100%);
+            padding: 25px;
+            margin: 25px 0;
+            border-radius: 8px;
+            border-left: 5px solid #667eea;
+        }
+
+        .philosophy-quote {
+            font-size: 1.5em;
+            font-style: italic;
+            color: #2a5298;
+            text-align: center;
+            margin: 30px 0;
+            padding: 20px;
+            border-top: 2px solid #e0e0e0;
+            border-bottom: 2px solid #e0e0e0;
+        }
+
+        ul {
+            margin: 15px 0;
+            padding-left: 25px;
+        }
+
+        li {
+            margin: 10px 0;
+            line-height: 1.6;
+        }
+
+        .cta-box {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 50px;
+            text-align: center;
+            border-radius: 8px;
+            margin: 40px 0;
+        }
+
+        .cta-box h3 {
+            color: white;
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+
+        .cta-box p {
+            font-size: 1.2em;
+            margin-bottom: 25px;
+        }
+
+        .cta-box a {
+            color: white;
+            font-size: 1.1em;
+            text-decoration: none;
+            margin: 0 15px;
+            padding: 12px 25px;
+            border: 2px solid white;
+            border-radius: 5px;
+            display: inline-block;
+            transition: all 0.3s;
+        }
+
+        .cta-box a:hover {
+            background: white;
+            color: #1e3c72;
+        }
+
         footer {
-            background: #333;
+            background: #1e3c72;
             color: white;
             text-align: center;
             padding: 30px 0;
             margin-top: 50px;
         }
-        
+
+        footer a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
         @media (max-width: 768px) {
             header h1 {
                 font-size: 2em;
             }
             
-            header p {
+            header .tagline {
                 font-size: 1.1em;
             }
-            
-            section {
-                padding: 30px 20px;
+
+            section h2 {
+                font-size: 2em;
             }
         }
     </style>
@@ -182,183 +274,460 @@
 <body>
     <header>
         <div class="container">
-            <h1>Gary Floyd</h1>
-            <p>Systems Engineer | AI Infrastructure | Industrial Automation</p>
-            <p style="font-size: 1.1em; margin-bottom: 20px;">25+ Years Building Complex Solutions from First Principles</p>
-            <div class="contact-links">
-                <a href="mailto:darkt22002@gmail.com">Email</a>
-                <a href="https://www.linkedin.com/in/gary-floyd-434862124/" target="_blank">LinkedIn</a>
-                <a href="https://github.com/darkt22002" target="_blank">GitHub</a>
+            <h1>Gary W. Floyd</h1>
+            <p class="tagline">Systems Engineer • AI Architect • Industrial Automation Specialist</p>
+            <p class="tagline">45+ Years Building Complex Systems from First Principles</p>
+            <div class="contact-info">
+                <a href="mailto:darkt22002@gmail.com">darkt22002@gmail.com</a>
+                <a href="tel:208-747-7044">208-747-7044</a>
+                <span>New Caney, Texas</span>
             </div>
         </div>
     </header>
 
-    <div class="container">
-        <section id="about">
-            <h2>About</h2>
-            <div class="about-text">
-                <p>Multi-disciplinary systems engineer with 25+ years building complex automation, networking, and AI systems. I solve problems that require crossing traditional boundaries—from low-level firmware to distributed AI architectures, from industrial PLCs to neural networks.</p>
-                
-                <p>My approach: understand systems from first principles, learn whatever's needed, and build working solutions. Whether it's architecting a 120-core distributed AI cluster, programming FDA-compliant manufacturing lines, or fabricating custom CNC machines from cast aluminum, I focus on solving hard problems with practical, maintainable solutions.</p>
-                
-                <p>Currently available for contract work in AI infrastructure, industrial automation, and systems integration.</p>
-            </div>
-        </section>
-
-        <section id="projects">
-            <h2>Featured Projects</h2>
+    <div class="intro">
+        <div class="container intro-content">
+            <p>Multi-disciplinary systems engineer with <strong>45+ years</strong> building complex automation, networking, and AI systems—from earning my ham radio license at age 10 to architecting distributed AI infrastructure today.</p>
             
-            <div class="project">
-                <h3>Nexus AI - Distributed Memory Architecture</h3>
-                <p>Designed and deployed a production-grade distributed AI system implementing Guided Entropy Processing (GEP) for semantic memory and multi-model orchestration.</p>
-                <ul>
-                    <li><strong>120+ CPU cores</strong> across multi-node cluster (HP DL380p, Dell R810, custom workstation)</li>
-                    <li><strong>40+ LLM models</strong> with intelligent routing and task-specific selection</li>
-                    <li><strong>94,000+ semantic chunks</strong> indexed with GEP-weighted relevance scoring</li>
-                    <li><strong>Autonomous node operation</strong> with cross-node memory synchronization</li>
-                    <li><strong>GPU acceleration</strong> via Tesla K80 (5000+ CUDA cores)</li>
-                    <li>Custom web interface for real-time system monitoring and interaction</li>
-                    <li>PostgreSQL-based ethical filtering using Truth/Openness/Accountability principles</li>
-                    <li>Published research on AI memory architecture and failure modes</li>
-                </ul>
-                <p><strong>Technologies:</strong> Python, Debian Linux, MariaDB, PostgreSQL, MongoDB, Redis, MQTT, Docker, Custom LLM orchestration, Embedding models (nomic, Jina, Qwen, Mistral)</p>
-            </div>
-
-            <div class="project">
-                <h3>Industrial Automation & Robotics Integration</h3>
-                <p>Engineered automation frameworks across food processing, packaging, and manufacturing sectors with FDA/USDA compliance.</p>
-                <ul>
-                    <li>Designed and programmed multi-vendor PLC systems (Rockwell RSLogix, Siemens TIA, Omron Sysmac, Beckhoff TwinCAT)</li>
-                    <li>Integrated robotic work cells using Fanuc, ABB, and Mitsubishi industrial robots</li>
-                    <li>Built SCADA systems for process monitoring and optimization</li>
-                    <li>Implemented predictive maintenance using AI-mechanical hybrid systems</li>
-                    <li>Developed workflow orchestration for dynamic production adaptation</li>
-                    <li>Led Scrum-based automation teams with Git-integrated CI/CD pipelines</li>
-                </ul>
-                <p><strong>Technologies:</strong> Ladder Logic, Structured Text, Function Block, OPC-UA, HMI design, Motion Control, Safety PLCs</p>
-            </div>
-
-            <div class="project">
-                <h3>Custom CNC Manufacturing System</h3>
-                <p>Designed and fabricated precision CNC machine from first principles, including metallurgical processes and mechanical engineering.</p>
-                <ul>
-                    <li>Built greensand casting setup and electric furnace for aluminum recycling</li>
-                    <li>Cast aluminum components from recycled materials (soda cans, 6061 drops)</li>
-                    <li>Machined precision parts using self-built equipment</li>
-                    <li>2.4kW spindle with dual ball screw drives on all axes</li>
-                    <li>Full G-code programming and CAM workflow integration</li>
-                    <li>Used initial MPCNC to machine upgrades for final production system</li>
-                </ul>
-                <p><strong>Technologies:</strong> CAD/CAM, G-code, Stepper/Servo control, Aluminum casting, Precision machining</p>
-            </div>
-
-            <div class="project">
-                <h3>High-Temperature 3D Printing Systems</h3>
-                <p>Built custom 3D printing systems capable of engineering-grade thermoplastic fabrication.</p>
-                <ul>
-                    <li>Manta M8P controller with CB1 Raspberry Pi modules</li>
-                    <li>530°C constant-temperature extruder for PEEK printing</li>
-                    <li>Custom firmware configuration and calibration</li>
-                    <li>Capable of printing engineering-grade materials for functional prototypes</li>
-                </ul>
-                <p><strong>Technologies:</strong> Klipper firmware, Python, 3D printer mechanics, High-temp material science</p>
-            </div>
-        </section>
-
-        <section id="skills">
-            <h2>Technical Skills</h2>
-            <div class="skills-grid">
-                <div class="skill-category">
-                    <h3>AI & Machine Learning</h3>
-                    <ul>
-                        <li>LLM Orchestration (40+ models)</li>
-                        <li>Vector Databases & Embeddings</li>
-                        <li>Semantic Search & Retrieval</li>
-                        <li>GPU Computing (CUDA)</li>
-                        <li>Distributed AI Systems</li>
-                        <li>AI Safety & Ethics</li>
-                    </ul>
-                </div>
-                
-                <div class="skill-category">
-                    <h3>Programming</h3>
-                    <ul>
-                        <li>Python (Primary)</li>
-                        <li>C++ / C# / Java</li>
-                        <li>SQL (PostgreSQL, MySQL, MSSQL)</li>
-                        <li>Ladder Logic & Structured Text</li>
-                        <li>Bash / Shell Scripting</li>
-                        <li>VBScript / Perl</li>
-                    </ul>
-                </div>
-                
-                <div class="skill-category">
-                    <h3>Infrastructure</h3>
-                    <ul>
-                        <li>Linux (Debian, Red Hat)</li>
-                        <li>Windows Server</li>
-                        <li>Docker / VMware</li>
-                        <li>Network Architecture (LAN/WAN)</li>
-                        <li>Cisco IOS / Firewalls</li>
-                        <li>VPN / VLAN / QoS</li>
-                    </ul>
-                </div>
-                
-                <div class="skill-category">
-                    <h3>Automation & Robotics</h3>
-                    <ul>
-                        <li>Rockwell RSLogix / Studio 5000</li>
-                        <li>Siemens TIA Portal</li>
-                        <li>Omron Sysmac Studio</li>
-                        <li>Beckhoff TwinCAT</li>
-                        <li>ABB RobotStudio</li>
-                        <li>SCADA Integration</li>
-                    </ul>
-                </div>
-                
-                <div class="skill-category">
-                    <h3>Databases</h3>
-                    <ul>
-                        <li>PostgreSQL</li>
-                        <li>MariaDB / MySQL</li>
-                        <li>MongoDB</li>
-                        <li>Redis</li>
-                        <li>SQLite</li>
-                        <li>Oracle 8i/9i</li>
-                    </ul>
-                </div>
-                
-                <div class="skill-category">
-                    <h3>Tools & Design</h3>
-                    <ul>
-                        <li>Git / GitHub</li>
-                        <li>AutoCAD Electrical</li>
-                        <li>SolidWorks</li>
-                        <li>Visual Studio / VS Code</li>
-                        <li>Wireshark</li>
-                        <li>G-code / CAM Software</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <section id="contact">
-            <h2>Get In Touch</h2>
-            <div class="about-text">
-                <p>I'm available for contract work, consulting, and full-time opportunities in AI infrastructure, industrial automation, and systems engineering.</p>
-                <p>Whether you need distributed AI architecture, manufacturing automation, or someone who can cross traditional engineering boundaries to solve complex problems—let's talk.</p>
-                <p style="margin-top: 30px;">
-                    <strong>Email:</strong> <a href="mailto:darkt22002@gmail.com" style="color: #667eea;">darkt22002@gmail.com</a><br>
-                    <strong>Phone:</strong> 208-747-7044<br>
-                    <strong>Location:</strong> New Caney, Texas
-                </p>
-            </div>
-        </section>
+            <p style="margin-top: 20px;">I solve problems that require crossing traditional boundaries: hardware to software, firmware to cloud, theory to production. Whether it's programming offshore drilling control systems, developing novel AI frameworks, or smelting aluminum to cast custom CNC parts—I focus on understanding systems from first principles and building practical, maintainable solutions.</p>
+            
+            <p style="margin-top: 20px;"><strong>Currently available for contract work, consulting, and full-time opportunities in AI infrastructure, industrial automation, control systems engineering, and systems integration.</strong></p>
+        </div>
     </div>
+
+    <section>
+        <div class="container">
+            <h2>Foundation: Four Decades of Systems Engineering</h2>
+            
+            <p style="font-size: 1.1em; margin-bottom: 30px;">My systems engineering journey began early—licensed ham radio operator at age 10, mentored by my grandfather (VP of IT at Ashland Oil, a Fortune 500 petroleum company). By age 16, I had built an ArcNet network integrated with ham radio repeaters for remote connectivity. This foundation in RF theory, telecommunications, and distributed systems has informed four decades of work across multiple domains:</p>
+            
+            <div class="timeline">
+                <div class="timeline-item">
+                    <strong>Early 1980s - Age 10:</strong> FCC Amateur Radio License (Extra Class), learning RF theory, electronics, and telecommunications under grandfather's mentorship
+                </div>
+                
+                <div class="timeline-item">
+                    <strong>1988 - Age 16:</strong> Built ArcNet network integrated with ham radio repeater for remote dialup connectivity. Started learning AutoCAD Release 10 (now 37+ years CAD experience)
+                </div>
+                
+                <div class="timeline-item">
+                    <strong>1995-2000:</strong> Senior IT Engineer at Compaq Computer Corporation, designing enterprise infrastructure and developing automation tools
+                </div>
+                
+                <div class="timeline-item">
+                    <strong>2000-2010:</strong> Enterprise contractor for Fortune 500 companies including Target Corporation, Level 3 Communications, NCR Corporation, 7-Eleven
+                </div>
+                
+                <div class="timeline-item">
+                    <strong>2003:</strong> Started using SolidWorks (now 22+ years parametric 3D modeling experience)
+                </div>
+                
+                <div class="timeline-item">
+                    <strong>2010-2017:</strong> CEO and Founder of IRSI Robotics, leading nationwide industrial automation integration projects across automotive, food processing, and packaging industries
+                </div>
+                
+                <div class="timeline-item">
+                    <strong>2016-2017:</strong> International project work with Beck Automation (Mumbai, India) on beverage manufacturing automation (Thumbs Up Cola facility)
+                </div>
+                
+                <div class="timeline-item">
+                    <strong>2018-2020:</strong> Specialized Kepware/OPC UA implementations for Daybreak Foods (Wisconsin) and R&D Plastics (Chicago)
+                </div>
+                
+                <div class="timeline-item">
+                    <strong>2024-Present:</strong> Developed Guided Entropy Principle (GEP) theoretical framework and built distributed AI infrastructure implementing novel consciousness-based decision-making algorithms
+                </div>
+            </div>
+            
+            <p style="margin-top: 40px; font-size: 1.1em;">I approach every problem from first principles—whether that means smelting aluminum from recycled cans to cast custom CNC brackets, writing Python motion control code for embedded ARM processors, or developing novel theoretical frameworks for distributed intelligence.</p>
+        </div>
+    </section>
+
+    <section style="background: #f9f9f9;">
+        <div class="container">
+            <h2>Nexus: Distributed AI Architecture & Research</h2>
+            
+            <p style="font-size: 1.1em; margin-bottom: 30px;">Designed and deployed a production-grade distributed AI system implementing the <strong>Guided Entropy Principle (GEP)</strong>—a novel theoretical framework I developed for modeling attention, memory formation, and decision-making as guided entropy flow through weighted information systems.</p>
+            
+            <div class="highlight-box">
+                <h4>Journey Timeline: 10 Months from Theory to Production</h4>
+                <p><strong>January 2024:</strong> "AI is black magic" - knew nothing beyond marketing promises</p>
+                <p><strong>October 2024:</strong> Production distributed AI cluster with 120+ cores, custom orchestration, and novel theoretical framework</p>
+                <p>This rapid learning curve demonstrates my approach: when I decide to master something, I go deep—understanding fundamentals, building from scratch, and contributing original research.</p>
+            </div>
+
+            <h3>Technical Architecture</h3>
+            <ul>
+                <li><strong>Compute:</strong> 120+ CPU cores distributed across multiple nodes</li>
+                <li><strong>Memory:</strong> 400GB+ RAM, GPU acceleration (NVIDIA)</li>
+                <li><strong>Orchestration:</strong> Custom Python layer for multi-model coordination</li>
+                <li><strong>Memory System:</strong> Tiered semantic memory (ShortTerm, MidTerm, LongTerm, Ethical-Core)</li>
+                <li><strong>Models:</strong> Multi-model orchestration (Qwen, Mistral, DeepSeek, Gemma, Llama)</li>
+                <li><strong>Embeddings:</strong> Vector search using nomic-embed, Jina embeddings</li>
+                <li><strong>Communication:</strong> Real-time MQTT messaging between distributed nodes</li>
+                <li><strong>Databases:</strong> MariaDB, PostgreSQL, MongoDB, Redis for different data types</li>
+                <li><strong>Infrastructure:</strong> Debian Linux, Docker containerization, custom service management</li>
+            </ul>
+
+            <h3>The Guided Entropy Principle (GEP)</h3>
+            
+            <p style="margin: 20px 0;">Developed mathematical framework bridging information theory, cognitive science, thermodynamics, and AI decision-making:</p>
+            
+            <div class="equation">
+                E(x) = dS/dt × w<sub>c</sub> × w<sub>d</sub> × w<sub>r</sub>
+            </div>
+            
+            <p style="margin: 20px 0;"><strong>Where effective significance is determined by:</strong></p>
+            <ul>
+                <li><strong>dS/dt:</strong> Entropy flow rate (rate of information change over time)</li>
+                <li><strong>w<sub>c</sub>:</strong> Context weight (situational relevance)</li>
+                <li><strong>w<sub>d</sub>:</strong> Depth weight (fundamental importance, ethical constraints)</li>
+                <li><strong>w<sub>r</sub>:</strong> Relevance weight (goal-directed importance)</li>
+            </ul>
+
+            <h3>Cross-Domain Applications</h3>
+            <p>GEP provides a unifying framework across multiple domains:</p>
+            <ul>
+                <li><strong>AI Systems:</strong> Attention mechanisms, memory prioritization, resource allocation</li>
+                <li><strong>Manufacturing:</strong> Quality control, predictive maintenance, production optimization</li>
+                <li><strong>Cognitive Science:</strong> Memory formation, attention, learning patterns</li>
+                <li><strong>Ethics:</strong> Constraint systems, value alignment, decision boundaries</li>
+                <li><strong>Physics:</strong> Emergent order from chaos, thermodynamic systems</li>
+                <li><strong>Biology:</strong> Evolution as guided mutation, adaptation patterns</li>
+            </ul>
+
+            <div class="highlight-box">
+                <h4>Empirical Validation</h4>
+                <p>Developed rigorous testing methodology using controlled probabilistic testbed. If GEP-guided predictions outperform pure randomness in the hardest possible case, it validates the principle for easier domains (manufacturing, markets, diagnostics).</p>
+                <p><strong>Status:</strong> 10,000+ trial validation in progress, full academic documentation complete (100+ pages), paper in preparation for submission</p>
+            </div>
+
+            <h3>Philosophy: "Bend with Guardrails, Don't Break Against Them"</h3>
+            <p>GEP embodies a practical philosophy: accept that entropy exists (chaos is natural), identify immovable constraints (fundamental limits), and guide entropy productively within those boundaries. This applies equally to AI decision-making, manufacturing optimization, and human problem-solving.</p>
+
+            <p style="margin-top: 30px;"><strong>Real-world validation:</strong> Advised colleague using GEP principles ("50% is realistic given constraints, excel within that rather than burning out chasing 100%"). Result: promoted twice, reduced stress, better outcomes.</p>
+
+            <div class="tech-tags">
+                <span class="tech-tag">Python</span>
+                <span class="tech-tag">Distributed Systems</span>
+                <span class="tech-tag">LLM Orchestration</span>
+                <span class="tech-tag">Vector Databases</span>
+                <span class="tech-tag">MQTT</span>
+                <span class="tech-tag">Docker</span>
+                <span class="tech-tag">MariaDB</span>
+                <span class="tech-tag">PostgreSQL</span>
+                <span class="tech-tag">MongoDB</span>
+                <span class="tech-tag">Redis</span>
+                <span class="tech-tag">Debian Linux</span>
+                <span class="tech-tag">Research & Development</span>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <h2>Industrial Automation & Control Systems</h2>
+            
+            <p style="font-size: 1.1em; margin-bottom: 30px;">Engineered automation frameworks across food processing, packaging, and manufacturing sectors with FDA/USDA compliance. Specialized in bridging OT/IT networks, integrating legacy systems with modern control platforms, and designing mission-critical SCADA systems.</p>
+
+            <div class="project-card">
+                <h3>Daybreak Foods (Wisconsin)</h3>
+                <h4>Kepware KEPServerEX Implementation & SCADA Integration</h4>
+                <ul>
+                    <li>Real-time SCADA integration with Allen-Bradley ControlLogix PLCs</li>
+                    <li>OPC DA/UA configuration for production monitoring and traceability</li>
+                    <li>SQL Server database integration for quality reporting and compliance</li>
+                    <li>Shop-floor to enterprise data connectivity (MES integration)</li>
+                    <li>Improved production visibility and reduced downtime through predictive alerts</li>
+                </ul>
+                <p><strong>Duration:</strong> 2018-2019 | <strong>Industry:</strong> Food Processing (FDA-compliant)</p>
+            </div>
+
+            <div class="project-card">
+                <h3>R&D Plastics (Chicago, Illinois)</h3>
+                <h4>MES System Integration & Part Traceability</h4>
+                <ul>
+                    <li>OPC UA connectivity between PLCs and Manufacturing Execution Systems</li>
+                    <li>Part traceability system for injection molding quality compliance</li>
+                    <li>Ethernet/IP and Modbus TCP protocol configuration</li>
+                    <li>Real-time production data collection and analysis</li>
+                    <li>Automated quality control and defect tracking</li>
+                </ul>
+                <p><strong>Duration:</strong> 2019-2020 | <strong>Industry:</strong> Injection Molding Manufacturing</p>
+            </div>
+
+            <div class="project-card">
+                <h3>Beck Automation (Mumbai, India)</h3>
+                <h4>International Beverage Manufacturing Automation</h4>
+                <ul>
+                    <li>Control system configuration for Thumbs Up Cola production facility</li>
+                    <li>Industrial automation systems integration and commissioning</li>
+                    <li>Cross-cultural engineering team coordination</li>
+                    <li>Remote project management and technical support</li>
+                    <li>Sub-contractor relationship demonstrating international capability</li>
+                </ul>
+                <p><strong>Duration:</strong> 2016-2017 | <strong>Industry:</strong> Beverage Manufacturing</p>
+            </div>
+
+            <div class="project-card">
+                <h3>IRSI Robotics (CEO & Founder, 2010-2017)</h3>
+                <h4>Industrial Automation Integration Firm</h4>
+                <ul>
+                    <li>Led nationwide robotic integration and automation projects</li>
+                    <li>Automotive, food processing, and packaging industries</li>
+                    <li>FDA/USDA-compliant control systems design and implementation</li>
+                    <li>Custom PLC programming (Siemens, Rockwell, Omron)</li>
+                    <li>HMI/SCADA development for production monitoring</li>
+                    <li>Safety system design (safety PLCs, emergency stops, interlocks)</li>
+                    <li>System commissioning, validation, and operator training</li>
+                </ul>
+                <p><strong>Duration:</strong> 2010-2017 (7 years) | <strong>Role:</strong> CEO | <strong>Scope:</strong> National</p>
+            </div>
+
+            <h3>Additional Fortune 500 Clients</h3>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <strong>Target Corporation:</strong> Enterprise LAN/WAN architecture, multi-site network connectivity, Cisco router/switch/firewall configuration, VLAN segmentation and security (2005-2008)
+                </div>
+                <div class="timeline-item">
+                    <strong>Level 3 Communications (Houston, TX):</strong> Telecommunications infrastructure design and implementation, critical network architecture (2017)
+                </div>
+                <div class="timeline-item">
+                    <strong>NCR Corporation:</strong> Enterprise infrastructure and database administration, multi-site deployments
+                </div>
+                <div class="timeline-item">
+                    <strong>7-Eleven Corporation:</strong> Network architecture for multi-site retail operations, store systems integration
+                </div>
+                <div class="timeline-item">
+                    <strong>Compaq Computer Corporation:</strong> Senior IT Engineer, network infrastructure and systems engineering (1995-2000)
+                </div>
+            </div>
+
+            <h3>Technical Expertise</h3>
+            
+            <h4>PLC Platforms</h4>
+            <div class="tech-tags">
+                <span class="tech-tag">Siemens TIA Portal</span>
+                <span class="tech-tag">Siemens S7-400</span>
+                <span class="tech-tag">Siemens PCS 7 (working experience)</span>
+                <span class="tech-tag">Rockwell ControlLogix</span>
+                <span class="tech-tag">Rockwell CompactLogix</span>
+                <span class="tech-tag">Allen-Bradley</span>
+                <span class="tech-tag">Omron</span>
+                <span class="tech-tag">Schneider Electric</span>
+            </div>
+
+            <h4>Programming Languages</h4>
+            <div class="tech-tags">
+                <span class="tech-tag">Ladder Logic</span>
+                <span class="tech-tag">Structured Text (ST)</span>
+                <span class="tech-tag">Function Block Diagram (FBD)</span>
+                <span class="tech-tag">Sequential Function Chart (SFC)</span>
+            </div>
+
+            <h4>Industrial Networking & Integration</h4>
+            <div class="tech-tags">
+                <span class="tech-tag">OPC DA/UA</span>
+                <span class="tech-tag">Kepware KEPServerEX</span>
+                <span class="tech-tag">Ethernet/IP</span>
+                <span class="tech-tag">Modbus TCP/RTU</span>
+                <span class="tech-tag">PROFIBUS</span>
+                <span class="tech-tag">PROFINET</span>
+                <span class="tech-tag">Industrial Ethernet</span>
+                <span class="tech-tag">MES Integration</span>
+            </div>
+
+            <h4>SCADA & HMI</h4>
+            <div class="tech-tags">
+                <span class="tech-tag">WinCC</span>
+                <span class="tech-tag">FactoryTalk View</span>
+                <span class="tech-tag">Ignition SCADA</span>
+                <span class="tech-tag">Custom HMI Development</span>
+                <span class="tech-tag">SQL Integration</span>
+            </div>
+
+            <h4>Specialized Systems</h4>
+            <div class="tech-tags">
+                <span class="tech-tag">Motion Control</span>
+                <span class="tech-tag">Safety PLCs</span>
+                <span class="tech-tag">Servo Systems</span>
+                <span class="tech-tag">VFD Integration</span>
+                <span class="tech-tag">Vision Systems</span>
+                <span class="tech-tag">Robotic Integration</span>
+            </div>
+        </div>
+    </section>
+
+    <section style="background: #f9f9f9;">
+        <div class="container">
+            <h2>Design & Fabrication: Complete Manufacturing Pipeline</h2>
+            
+            <p style="font-size: 1.1em; margin-bottom: 30px;">I don't just design systems—I build them from raw materials to finished products, understanding every step of the manufacturing process. This deep practical knowledge of materials, machining, and fabrication makes me better at industrial automation because I understand what's actually happening on the shop floor.</p>
+
+            <div class="highlight-box">
+                <h4>Complete Manufacturing Pipeline: From Smelting to Motion Control</h4>
+                <p>Designed and built custom CNC machines starting with raw materials and ending with precision motion control—demonstrating mastery across mechanical design, metallurgy, machining, electronics, and embedded software development.</p>
+            </div>
+
+            <h3>1. Materials & Metallurgy</h3>
+            <ul>
+                <li><strong>Aluminum Smelting:</strong> Recycled Dr. Pepper cans and automotive aluminum scrap in propane furnace (1200°F+)</li>
+                <li><strong>Sand Casting:</strong> Greensand mold making (cope, drag, cores) for custom brackets and structural components</li>
+                <li><strong>Pattern Making:</strong> Designed casting patterns with proper draft angles and gating systems</li>
+                <li><strong>Quality Control:</strong> Visual inspection, dimensional verification, defect analysis</li>
+            </ul>
+
+            <h3>2. Mechanical Design (37+ Years CAD Experience)</h3>
+            <ul>
+                <li><strong>SolidWorks (2003-Present, 22+ years):</strong> Parametric 3D modeling, assemblies, FEA simulation for structural validation</li>
+                <li><strong>AutoCAD (1988-Present, 37+ years):</strong> Started with Release 10 on DOS, mastered through all versions</li>
+                <li><strong>FreeCAD (10+ years):</strong> Open-source parametric modeling, Python scripting integration</li>
+                <li><strong>Design Capabilities:</strong> Technical drawings, P&IDs, electrical schematics, mechanical layouts</li>
+            </ul>
+
+            <h3>3. Precision Machining & CNC</h3>
+            <ul>
+                <li>Machined raw aluminum castings into precision brackets on custom-built CNC</li>
+                <li>CAM programming and G-code generation for multi-axis operations</li>
+                <li>Tolerances: ±0.001" for critical dimensions</li>
+                <li><strong>Custom Motion Control:</strong> Python-based G-code interpreter ported from Mach3/4 to ARM embedded platform</li>
+                <li><strong>Hardware:</strong> BTT Biqu M8P (STM32H723) + CB1 compute module (RK3566)</li>
+                <li><strong>Real-Time Control:</strong> Microsecond timing precision for stepper motor coordination</li>
+            </ul>
+
+            <h3>4. High-Temperature 3D Printing</h3>
+            <ul>
+                <li><strong>PEEK-Capable Design:</strong> 400°C+ all-metal hotend for engineering-grade thermoplastics</li>
+                <li><strong>Heated Chamber:</strong> 80-100°C ambient temperature control for dimensional stability</li>
+                <li><strong>Materials:</strong> PEEK, PEI (Ultem), Nylon, Carbon Fiber composites</li>
+                <li><strong>Firmware:</strong> Klipper configuration, Python macros, auto-leveling</li>
+            </ul>
+
+            <div class="highlight-box">
+                <h4>Why This Matters for Industrial Automation</h4>
+                <p>Understanding the complete manufacturing pipeline—from material science to machining to control systems—makes me better at PLC programming and SCADA development. I don't just configure systems; I understand the physics, mechanics, and real-world constraints of what's happening on the shop floor. This leads to better troubleshooting, more robust designs, and practical solutions that account for real manufacturing challenges.</p>
+            </div>
+
+            <div class="tech-tags" style="margin-top: 30px;">
+                <span class="tech-tag">SolidWorks (22 years)</span>
+                <span class="tech-tag">AutoCAD (37 years)</span>
+                <span class="tech-tag">FreeCAD</span>
+                <span class="tech-tag">CAM Programming</span>
+                <span class="tech-tag">G-code</span>
+                <span class="tech-tag">CNC Machining</span>
+                <span class="tech-tag">Metal Casting</span>
+                <span class="tech-tag">3D Printing</span>
+                <span class="tech-tag">Python</span>
+                <span class="tech-tag">Embedded Systems</span>
+                <span class="tech-tag">Motion Control</span>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <h2>Research & Publications</h2>
+            
+            <div class="project-card">
+                <h3>Guided Entropy Principle (GEP): A Novel Framework for Intelligence & Decision-Making</h3>
+                
+                <p style="font-size: 1.1em; margin: 20px 0;"><strong>Abstract:</strong> The Guided Entropy Principle provides a mathematical framework for understanding consciousness, learning, and intelligence as guided entropy flow through weighted information systems. GEP bridges information theory, cognitive science, and thermodynamics through the equation E(x) = dS/dt × w<sub>c</sub> × w<sub>d</sub> × w<sub>r</sub>, where effective significance is determined by entropy flow rate modulated by context, depth, and relevance weights.</p>
+                
+                <h4>Key Contributions</h4>
+                <ul>
+                    <li><strong>Mathematical Formulation:</strong> Novel equation unifying entropy dynamics with weighted information processing</li>
+                    <li><strong>Cross-Domain Applications:</strong> Framework applies to physics, biology, cognitive science, AI systems, manufacturing, and social systems</li>
+                    <li><strong>Empirical Validation:</strong> Rigorous testing methodology using controlled probabilistic testbed (10,000+ trials)</li>
+                    <li><strong>Production Implementation:</strong> Deployed in Nexus distributed AI cluster for attention mechanisms and memory prioritization</li>
+                    <li><strong>Theoretical Bridge:</strong> Connects thermodynamic entropy with information-theoretic entropy and cognitive attention</li>
+                    <li><strong>Practical Philosophy:</strong> "Bend with guardrails, don't break against them"</li>
+                </ul>
+
+                <h4>Applications Across Domains</h4>
+                <ul>
+                    <li><strong>Artificial Intelligence:</strong> Attention mechanisms, memory formation, decision prioritization, resource allocation</li>
+                    <li><strong>Manufacturing:</strong> Quality control optimization, predictive maintenance, production planning under uncertainty</li>
+                    <li><strong>Cognitive Science:</strong> Memory formation patterns, attention allocation, learning mechanisms</li>
+                    <li><strong>Ethical Systems:</strong> Value alignment and constraint-based decision boundaries</li>
+                    <li><strong>Complex Systems:</strong> Understanding emergent order in biological, social, and physical systems</li>
+                </ul>
+
+                <p style="margin-top: 25px;"><strong>Status:</strong> Academic paper in preparation | <strong>Documentation:</strong> 100+ pages complete</p>
+                
+                <p style="margin-top: 15px;"><strong>Timeline:</strong> Theory developed over 10 months (January-October 2024) during Nexus cluster development</p>
+            </div>
+        </div>
+    </section>
+
+    <section style="background: #f9f9f9;">
+        <div class="container">
+            <h2>Engineering Philosophy</h2>
+            
+            <div class="philosophy-quote">
+                "Bend with guardrails, don't break against them"
+            </div>
+
+            <p style="font-size: 1.1em; margin: 30px 0;">I believe in understanding systems from first principles—not just using tools, but understanding how they work deeply enough to modify, improve, and rebuild them when needed. This approach has served me for 45 years across multiple domains.</p>
+
+            <h3>When I Decide to Learn Something, I Go Deep</h3>
+            <ul>
+                <li><strong>Age 10:</strong> Ham radio license, RF theory and telecommunications</li>
+                <li><strong>Age 16:</strong> Built ArcNet system integrated with radio repeaters</li>
+                <li><strong>1988:</strong> Started AutoCAD (now 37 years experience)</li>
+                <li><strong>2003:</strong> Started SolidWorks (now 22 years experience)</li>
+                <li><strong>2010s:</strong> Built automation company, led nationwide projects for 7 years</li>
+                <li><strong>2024:</strong> "AI is black magic" → 10 months later: distributed AI cluster + novel theoretical framework</li>
+            </ul>
+
+            <h3>My Process</h3>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <strong>1. Identify the Fundamental Problem</strong> - Look past symptoms to root causes. Understand constraints (physical, economic, practical).
+                </div>
+                <div class="timeline-item">
+                    <strong>2. Learn Whatever's Needed</strong> - If I don't know something required to solve the problem correctly, I learn it deeply.
+                </div>
+                <div class="timeline-item">
+                    <strong>3. Build Working Solutions</strong> - Focus on practical, maintainable implementations. Theory matters, but working systems matter more.
+                </div>
+                <div class="timeline-item">
+                    <strong>4. Document Thoroughly</strong> - For future understanding, maintenance, and knowledge transfer.
+                </div>
+            </div>
+
+            <p style="font-size: 1.1em; margin: 30px 0;">Whether it's troubleshooting a PLC on an offshore drilling rig, architecting a distributed AI system, or casting custom aluminum parts for a CNC build—the approach is the same: <strong>understand deeply, build correctly, document thoroughly.</strong></p>
+        </div>
+    </section>
+
+    <section>
+        <div class="container" style="padding: 50px 0;">
+            <div class="cta-box">
+                <h3>Available for Contract Work & Full-Time Opportunities</h3>
+                <p>Seeking opportunities in AI infrastructure, industrial automation, control systems engineering, and complex systems integration. Whether you need:</p>
+                <ul style="text-align: left; max-width: 800px; margin: 0 auto 30px; font-size: 1.1em;">
+                    <li>Offshore drilling control systems (Siemens PCS 7, mission-critical SCADA)</li>
+                    <li>Manufacturing automation and FDA-compliant systems</li>
+                    <li>Distributed AI architecture and novel AI frameworks</li>
+                    <li>Someone who can bridge hardware, software, and theory to solve hard problems</li>
+                </ul>
+                <p style="font-size: 1.3em; margin: 30px 0;">Let's talk.</p>
+                <div>
+                    <a href="mailto:darkt22002@gmail.com">Email Me</a>
+                    <a href="tel:208-747-7044">Call: 208-747-7044</a>
+                </div>
+                <p style="margin-top: 30px; font-size: 1.1em;">New Caney, Texas (willing to relocate or work offshore rotations)</p>
+            </div>
+        </div>
+    </section>
 
     <footer>
         <div class="container">
-            <p>&copy; 2025 Gary Floyd. Available for contract work and full-time opportunities.</p>
+            <p>&copy; 2024 Gary W. Floyd. All rights reserved.</p>
+            <p style="margin-top: 10px;">Multi-disciplinary Systems Engineer | AI Architect | Industrial Automation Specialist</p>
+            <p style="margin-top: 15px;">
+                <a href="mailto:darkt22002@gmail.com">darkt22002@gmail.com</a> | 
+                <a href="tel:208-747-7044">208-747-7044</a>
+            </p>
         </div>
     </footer>
 </body>
