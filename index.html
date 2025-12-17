@@ -3,578 +3,594 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Gary W. Floyd - Systems Engineer & AI Architect</title>
-  <meta name="description" content="Gary W. Floyd — Systems Engineer, AI Architect, and Industrial Automation Specialist. 25+ years pro experience building distributed AI, control systems, and end-to-end automation." />
-  <meta name="author" content="Gary W. Floyd" />
-  <meta name="robots" content="index,follow" />
+  <title>LCARS :: Gary W. Floyd - Systems Engineer</title>
+  <meta name="description" content="Gary W. Floyd — Systems Engineer, AI Architect, Industrial Automation Specialist" />
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Antonio:wght@400;700&display=swap');
+    
     * { margin:0; padding:0; box-sizing:border-box; }
-    :root{
-      --lcars-orange:#ff9900;
-      --lcars-purple:#cc99cc;
-      --lcars-blue:#9999ff;
-      --lcars-pink:#ff99cc;
-      --lcars-red:#cc6666;
-      --lcars-gold:#ffcc66;
-      --lcars-bg:#000;
-      --lcars-text:#ff9900;
-      --lcars-panel:#1a0d00;
-      --lcars-border:#ff9900;
-    }
-    body{ 
-      font-family:'Helvetica Neue','Arial Narrow',Arial,sans-serif; 
-      line-height:1.5; 
-      color:var(--lcars-text); 
-      background:var(--lcars-bg);
-      letter-spacing:0.02em;
-    }
-    .container{ max-width:1400px; margin:0 auto; padding:0 20px; }
     
-    /* LCARS Header */
-    header{ 
-      background:var(--lcars-panel); 
-      border-bottom:4px solid var(--lcars-orange); 
-      padding:0; 
-      position:relative;
-    }
-    .header-bar{
-      background:var(--lcars-orange);
-      height:60px;
-      display:flex;
-      align-items:center;
-      padding:0 30px;
-      border-bottom-right-radius:40px;
-    }
-    header h1{ 
-      font-size:2.5em; 
-      font-weight:400;
-      text-transform:uppercase;
-      letter-spacing:0.1em;
-      color:#000;
-    }
-    .header-content{
-      padding:30px;
-      display:grid;
-      grid-template-columns:auto 1fr;
-      gap:30px;
-    }
-    .side-bar{
-      width:150px;
-      display:flex;
-      flex-direction:column;
-      gap:10px;
-    }
-    .side-panel{
-      background:var(--lcars-purple);
-      height:80px;
-      border-radius:20px;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      color:#000;
-      font-weight:bold;
-      font-size:1.1em;
-      text-transform:uppercase;
-    }
-    .side-panel:nth-child(2){ background:var(--lcars-blue); }
-    .side-panel:nth-child(3){ background:var(--lcars-pink); }
-    .side-panel:nth-child(4){ background:var(--lcars-red); }
-    
-    .main-content{ padding-left:30px; }
-    .tagline{ 
-      font-size:1.4em; 
-      margin-bottom:10px; 
-      color:var(--lcars-gold); 
-      font-weight:300; 
-      text-transform:uppercase;
-      letter-spacing:0.05em;
-    }
-    .contact-info{ 
-      margin-top:20px; 
-      font-size:1.1em; 
-      display:flex; 
-      gap:20px; 
-      flex-wrap:wrap; 
-    }
-    .contact-info a{ 
-      color:var(--lcars-blue); 
-      text-decoration:none; 
-      border-bottom:2px solid var(--lcars-blue); 
-      transition:all .2s; 
-    }
-    .contact-info a:hover{ color:var(--lcars-orange); border-color:var(--lcars-orange); }
-    
-    /* LCARS Sections */
-    section{ 
-      background:var(--lcars-panel); 
-      margin:30px 0; 
-      padding:40px;
-      border-left:10px solid var(--lcars-orange);
-      border-radius:0 20px 20px 0;
-      position:relative;
-    }
-    section::before{
-      content:'';
-      position:absolute;
-      top:0;
-      left:-10px;
-      width:10px;
-      height:40px;
-      background:var(--lcars-purple);
-    }
-    section:nth-child(even){ border-left-color:var(--lcars-purple); }
-    section:nth-child(even)::before{ background:var(--lcars-orange); }
-    
-    h2{ 
-      font-size:2.2em; 
-      margin-bottom:30px; 
-      color:var(--lcars-orange); 
-      text-transform:uppercase;
-      letter-spacing:0.1em;
-      font-weight:400;
-      border-bottom:3px solid var(--lcars-orange);
-      padding-bottom:15px;
-    }
-    h3{ 
-      font-size:1.7em; 
-      margin:30px 0 20px; 
-      color:var(--lcars-gold); 
-      text-transform:uppercase;
-      letter-spacing:0.05em;
-      font-weight:400;
-    }
-    h4{ 
-      font-size:1.3em; 
-      margin:20px 0 12px; 
-      color:var(--lcars-blue); 
-      font-weight:600; 
-      text-transform:uppercase;
+    :root {
+      --lcars-orange: #ff9900;
+      --lcars-tanoi: #cc6699;
+      --lcars-lilac: #cc99cc;
+      --lcars-blue: #9999ff;
+      --lcars-sky: #99ccff;
+      --lcars-peach: #ff9966;
+      --lcars-red: #cc6666;
+      --lcars-gold: #ffcc66;
+      --lcars-bg: #000000;
+      --lcars-text: #ffaa00;
+      --lcars-panel: #000000;
     }
     
-    .intro-content{ 
-      max-width:1100px; 
-      font-size:1.15em; 
-      line-height:1.8; 
-    }
-    .intro-content strong{ 
-      color:var(--lcars-gold); 
-      font-weight:600; 
+    body {
+      font-family: 'Antonio', 'Helvetica Neue', Arial, sans-serif;
+      background: var(--lcars-bg);
+      color: var(--lcars-text);
+      overflow-x: hidden;
+      line-height: 1.4;
     }
     
-    /* LCARS Timeline */
-    .timeline{ max-width:1000px; margin:20px 0; }
-    .timeline-item{ 
-      margin:15px 0; 
-      padding:15px 20px 15px 35px; 
-      background:rgba(255,153,0,0.1);
-      border-left:5px solid var(--lcars-orange); 
-      border-radius:0 15px 15px 0;
-      position:relative; 
-    }
-    .timeline-item::before{ 
-      content:''; 
-      position:absolute; 
-      left:-10px; 
-      top:50%;
-      transform:translateY(-50%);
-      width:15px; 
-      height:15px; 
-      border-radius:50%; 
-      background:var(--lcars-blue); 
-      border:3px solid var(--lcars-bg);
-    }
-    .timeline-item strong{ color:var(--lcars-gold); }
-    
-    /* LCARS Project Cards */
-    .project-card{ 
-      background:rgba(153,153,255,0.1); 
-      padding:30px; 
-      margin:25px 0; 
-      border-radius:15px; 
-      border-left:8px solid var(--lcars-blue); 
-      border-top:3px solid var(--lcars-purple);
-    }
-    .project-card h3{ color:var(--lcars-blue); margin-top:0; }
-    .project-card h4{ color:var(--lcars-pink); }
-    
-    ul{ margin:15px 0; padding-left:25px; }
-    li{ 
-      margin:10px 0; 
-      line-height:1.7; 
-      color:var(--lcars-text);
-    }
-    li::marker{ color:var(--lcars-orange); }
-    
-    /* LCARS Tech Tags */
-    .tech-category{
-      margin:25px 0;
-      padding:20px;
-      background:rgba(255,153,0,0.05);
-      border-radius:10px;
-      border-left:5px solid var(--lcars-purple);
-    }
-    .tech-category h4{ 
-      color:var(--lcars-purple); 
-      margin-top:0;
-      margin-bottom:15px;
-    }
-    .tech-tags{ 
-      display:flex; 
-      flex-wrap:wrap; 
-      gap:12px; 
-    }
-    .tech-tag{ 
-      background:var(--lcars-orange); 
-      color:#000; 
-      padding:8px 16px; 
-      border-radius:20px; 
-      font-size:0.95em; 
-      font-weight:600; 
-      text-transform:uppercase;
-      letter-spacing:0.05em;
-    }
-    .tech-tag:nth-child(3n+1){ background:var(--lcars-blue); }
-    .tech-tag:nth-child(3n+2){ background:var(--lcars-purple); }
-    
-    /* Equations */
-    .equation{ 
-      background:rgba(153,153,255,0.2); 
-      padding:25px; 
-      margin:25px 0; 
-      border-radius:10px; 
-      font-family:'Courier New',monospace; 
-      font-size:1.4em; 
-      text-align:center; 
-      color:var(--lcars-gold); 
-      border:3px solid var(--lcars-blue); 
+    /* LCARS Header - Bridge Style */
+    .lcars-header {
+      display: grid;
+      grid-template-columns: 200px 1fr 200px;
+      height: 120px;
+      margin-bottom: 20px;
     }
     
-    .highlight-box{ 
-      background:rgba(255,153,0,0.1); 
-      padding:25px; 
-      margin:25px 0; 
-      border-radius:10px; 
-      border-left:8px solid var(--lcars-orange); 
+    .lcars-corner-left {
+      background: var(--lcars-orange);
+      border-radius: 0 0 80px 0;
+      position: relative;
     }
     
-    .philosophy-quote{ 
-      font-size:1.5em; 
-      font-style:italic; 
-      color:var(--lcars-gold); 
-      text-align:center; 
-      margin:30px 0; 
-      padding:25px; 
-      border-top:3px solid var(--lcars-orange); 
-      border-bottom:3px solid var(--lcars-orange); 
-      text-transform:uppercase;
-      letter-spacing:0.05em;
+    .lcars-corner-left::after {
+      content: '';
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 40px;
+      height: 40px;
+      background: var(--lcars-bg);
+      border-radius: 0 0 0 40px;
     }
     
-    /* CTA Box */
-    .cta-box{ 
-      background:linear-gradient(135deg, rgba(255,153,0,0.2) 0%, rgba(153,153,255,0.2) 100%); 
-      padding:50px; 
-      text-align:center; 
-      border-radius:20px; 
-      margin:40px 0; 
-      border:4px solid var(--lcars-orange);
-    }
-    .cta-box h3{ color:var(--lcars-orange); margin-bottom:20px; }
-    .cta-box a{ 
-      color:var(--lcars-orange); 
-      font-size:1.15em; 
-      text-decoration:none; 
-      margin:0 15px; 
-      padding:15px 30px; 
-      border:3px solid var(--lcars-orange); 
-      border-radius:25px; 
-      display:inline-block; 
-      transition:all .3s; 
-      text-transform:uppercase;
-      font-weight:bold;
-      letter-spacing:0.05em;
-    }
-    .cta-box a:hover{ 
-      background:var(--lcars-orange); 
-      color:#000; 
+    .lcars-title-bar {
+      display: flex;
+      align-items: center;
+      padding: 0 40px;
+      background: linear-gradient(to right, var(--lcars-orange), var(--lcars-peach));
     }
     
-    footer{ 
-      background:var(--lcars-panel); 
-      color:var(--lcars-text); 
-      text-align:center; 
-      padding:40px 0; 
-      margin-top:50px; 
-      border-top:4px solid var(--lcars-orange);
+    .lcars-title-bar h1 {
+      font-size: 3em;
+      font-weight: 700;
+      color: #000;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
     }
-    footer a{ color:var(--lcars-blue); text-decoration:none; }
-    footer a:hover{ color:var(--lcars-orange); }
     
-    @media (max-width:768px){
-      .header-content{ grid-template-columns:1fr; }
-      .side-bar{ 
-        width:100%; 
-        flex-direction:row; 
-        overflow-x:auto; 
+    .lcars-corner-right {
+      background: var(--lcars-tanoi);
+      border-radius: 0 0 0 80px;
+      position: relative;
+    }
+    
+    .lcars-corner-right::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 40px;
+      height: 40px;
+      background: var(--lcars-bg);
+      border-radius: 0 0 40px 0;
+    }
+    
+    /* Side Panels - Classic LCARS */
+    .lcars-container {
+      display: grid;
+      grid-template-columns: 180px 1fr 180px;
+      gap: 20px;
+      padding: 0 20px;
+      max-width: 1800px;
+      margin: 0 auto;
+    }
+    
+    .lcars-left-panel {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    
+    .lcars-button {
+      background: var(--lcars-lilac);
+      height: 45px;
+      border-radius: 25px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #000;
+      font-weight: 700;
+      font-size: 0.95em;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    
+    .lcars-button:hover {
+      background: var(--lcars-orange);
+      box-shadow: 0 0 20px var(--lcars-orange);
+    }
+    
+    .lcars-button.orange { background: var(--lcars-orange); }
+    .lcars-button.blue { background: var(--lcars-blue); }
+    .lcars-button.tanoi { background: var(--lcars-tanoi); }
+    .lcars-button.peach { background: var(--lcars-peach); }
+    .lcars-button.red { background: var(--lcars-red); }
+    .lcars-button.gold { background: var(--lcars-gold); }
+    
+    .lcars-elbow {
+      background: var(--lcars-lilac);
+      height: 80px;
+      border-radius: 0 40px 40px 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #000;
+      font-weight: 700;
+      font-size: 1.1em;
+      text-transform: uppercase;
+    }
+    
+    .lcars-elbow.left {
+      border-radius: 40px 0 0 40px;
+    }
+    
+    .lcars-spacer {
+      background: var(--lcars-bg);
+      height: 20px;
+    }
+    
+    /* Main Content Area */
+    .lcars-main {
+      display: flex;
+      flex-direction: column;
+      gap: 25px;
+    }
+    
+    .lcars-panel {
+      background: rgba(255,153,0,0.05);
+      border-left: 8px solid var(--lcars-orange);
+      padding: 30px 40px;
+      border-radius: 0 20px 20px 0;
+      position: relative;
+    }
+    
+    .lcars-panel::before {
+      content: '';
+      position: absolute;
+      left: -8px;
+      top: 0;
+      width: 8px;
+      height: 50px;
+      background: var(--lcars-lilac);
+    }
+    
+    .lcars-panel.alt {
+      border-left-color: var(--lcars-lilac);
+    }
+    
+    .lcars-panel.alt::before {
+      background: var(--lcars-orange);
+    }
+    
+    .lcars-panel h2 {
+      font-size: 2.2em;
+      font-weight: 700;
+      color: var(--lcars-orange);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 20px;
+      border-bottom: 4px solid var(--lcars-orange);
+      padding-bottom: 10px;
+    }
+    
+    .lcars-panel.alt h2 {
+      color: var(--lcars-lilac);
+      border-bottom-color: var(--lcars-lilac);
+    }
+    
+    .lcars-panel h3 {
+      font-size: 1.6em;
+      color: var(--lcars-gold);
+      text-transform: uppercase;
+      margin: 25px 0 15px;
+      font-weight: 700;
+    }
+    
+    .lcars-panel h4 {
+      font-size: 1.3em;
+      color: var(--lcars-blue);
+      text-transform: uppercase;
+      margin: 20px 0 10px;
+      font-weight: 700;
+    }
+    
+    .lcars-panel p {
+      font-size: 1.05em;
+      line-height: 1.7;
+      margin: 15px 0;
+    }
+    
+    .lcars-panel ul {
+      margin: 15px 0;
+      padding-left: 30px;
+    }
+    
+    .lcars-panel li {
+      margin: 10px 0;
+      line-height: 1.6;
+    }
+    
+    .lcars-panel li::marker {
+      color: var(--lcars-orange);
+    }
+    
+    /* Contact Info Bar */
+    .contact-bar {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+      margin: 20px 0;
+      font-size: 1.1em;
+    }
+    
+    .contact-bar a {
+      color: var(--lcars-blue);
+      text-decoration: none;
+      padding: 8px 20px;
+      background: rgba(153,153,255,0.15);
+      border-radius: 20px;
+      border: 2px solid var(--lcars-blue);
+      transition: all 0.3s;
+      text-transform: uppercase;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+    }
+    
+    .contact-bar a:hover {
+      background: var(--lcars-blue);
+      color: #000;
+      box-shadow: 0 0 20px var(--lcars-blue);
+    }
+    
+    /* Tech Grid */
+    .tech-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+      gap: 10px;
+      margin: 20px 0;
+    }
+    
+    .tech-item {
+      background: var(--lcars-orange);
+      color: #000;
+      padding: 10px 15px;
+      border-radius: 20px;
+      text-align: center;
+      font-weight: 700;
+      font-size: 0.9em;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    
+    .tech-item:nth-child(4n+1) { background: var(--lcars-orange); }
+    .tech-item:nth-child(4n+2) { background: var(--lcars-lilac); }
+    .tech-item:nth-child(4n+3) { background: var(--lcars-blue); }
+    .tech-item:nth-child(4n+4) { background: var(--lcars-tanoi); }
+    
+    /* Timeline */
+    .timeline {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin: 20px 0;
+    }
+    
+    .timeline-item {
+      background: rgba(153,153,255,0.1);
+      padding: 15px 20px;
+      border-left: 6px solid var(--lcars-blue);
+      border-radius: 0 15px 15px 0;
+      position: relative;
+    }
+    
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -12px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 18px;
+      height: 18px;
+      background: var(--lcars-orange);
+      border-radius: 50%;
+      border: 3px solid var(--lcars-bg);
+    }
+    
+    .timeline-item strong {
+      color: var(--lcars-gold);
+      font-weight: 700;
+    }
+    
+    /* Project Card */
+    .project-card {
+      background: rgba(153,153,255,0.08);
+      border: 4px solid var(--lcars-blue);
+      border-radius: 20px;
+      padding: 30px;
+      margin: 20px 0;
+      position: relative;
+    }
+    
+    .project-card::before {
+      content: '';
+      position: absolute;
+      top: -4px;
+      left: 40px;
+      right: 40px;
+      height: 4px;
+      background: var(--lcars-tanoi);
+    }
+    
+    .project-card h3 {
+      color: var(--lcars-blue);
+      margin-top: 0;
+    }
+    
+    /* Equation Display */
+    .equation {
+      background: rgba(153,153,255,0.15);
+      border: 4px solid var(--lcars-blue);
+      border-radius: 15px;
+      padding: 30px;
+      margin: 25px 0;
+      font-family: 'Courier New', monospace;
+      font-size: 1.6em;
+      text-align: center;
+      color: var(--lcars-gold);
+    }
+    
+    /* Highlight Box */
+    .highlight-box {
+      background: linear-gradient(135deg, rgba(255,153,0,0.15) 0%, rgba(204,102,153,0.15) 100%);
+      border-left: 8px solid var(--lcars-orange);
+      border-top: 4px solid var(--lcars-tanoi);
+      padding: 25px;
+      margin: 25px 0;
+      border-radius: 0 15px 15px 0;
+    }
+    
+    .highlight-box h4 {
+      color: var(--lcars-orange);
+      margin-top: 0;
+    }
+    
+    /* CTA Section */
+    .cta-section {
+      background: linear-gradient(135deg, rgba(255,153,0,0.2) 0%, rgba(153,153,255,0.2) 100%);
+      border: 6px solid var(--lcars-orange);
+      border-radius: 30px;
+      padding: 50px;
+      text-align: center;
+      margin: 40px 0;
+    }
+    
+    .cta-section h2 {
+      font-size: 2.5em;
+      color: var(--lcars-orange);
+      margin-bottom: 20px;
+      border: none;
+      padding: 0;
+    }
+    
+    .cta-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin: 30px 0;
+      flex-wrap: wrap;
+    }
+    
+    .cta-button {
+      background: transparent;
+      color: var(--lcars-orange);
+      border: 4px solid var(--lcars-orange);
+      padding: 15px 40px;
+      border-radius: 30px;
+      font-size: 1.2em;
+      font-weight: 700;
+      text-transform: uppercase;
+      text-decoration: none;
+      letter-spacing: 0.1em;
+      transition: all 0.3s;
+      display: inline-block;
+    }
+    
+    .cta-button:hover {
+      background: var(--lcars-orange);
+      color: #000;
+      box-shadow: 0 0 30px var(--lcars-orange);
+      transform: scale(1.05);
+    }
+    
+    /* Footer */
+    .lcars-footer {
+      margin-top: 60px;
+      padding: 40px 20px;
+      text-align: center;
+      border-top: 4px solid var(--lcars-orange);
+      background: rgba(255,153,0,0.05);
+    }
+    
+    .lcars-footer p {
+      margin: 10px 0;
+      font-size: 1.05em;
+    }
+    
+    .lcars-footer a {
+      color: var(--lcars-blue);
+      text-decoration: none;
+      font-weight: 700;
+    }
+    
+    .lcars-footer a:hover {
+      color: var(--lcars-orange);
+    }
+    
+    /* Responsive */
+    @media (max-width: 1200px) {
+      .lcars-container {
+        grid-template-columns: 150px 1fr 150px;
       }
-      .side-panel{ min-width:120px; height:60px; }
-      header h1{ font-size:1.8em; }
-      .tagline{ font-size:1.1em; }
-      h2{ font-size:1.7em; }
+      .lcars-button, .lcars-elbow {
+        font-size: 0.85em;
+      }
+    }
+    
+    @media (max-width: 968px) {
+      .lcars-header {
+        grid-template-columns: 120px 1fr 120px;
+        height: 100px;
+      }
+      .lcars-title-bar h1 {
+        font-size: 2em;
+      }
+      .lcars-container {
+        grid-template-columns: 1fr;
+        padding: 0 15px;
+      }
+      .lcars-left-panel, .lcars-right-panel {
+        display: none;
+      }
+      .tech-grid {
+        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+      }
+    }
+    
+    @media (max-width: 640px) {
+      .lcars-header {
+        grid-template-columns: 80px 1fr 80px;
+        height: 80px;
+      }
+      .lcars-title-bar h1 {
+        font-size: 1.4em;
+        letter-spacing: 0.08em;
+      }
+      .lcars-corner-left, .lcars-corner-right {
+        border-radius: 0 0 40px 0;
+      }
+      .lcars-corner-right {
+        border-radius: 0 0 0 40px;
+      }
+      .lcars-panel {
+        padding: 20px 25px;
+      }
+      .lcars-panel h2 {
+        font-size: 1.6em;
+      }
+      .cta-section {
+        padding: 30px 20px;
+      }
+      .cta-section h2 {
+        font-size: 1.8em;
+      }
+    }
+    
+    /* Scrollbar */
+    ::-webkit-scrollbar {
+      width: 12px;
+    }
+    
+    ::-webkit-scrollbar-track {
+      background: var(--lcars-bg);
+    }
+    
+    ::-webkit-scrollbar-thumb {
+      background: var(--lcars-orange);
+      border-radius: 6px;
+    }
+    
+    ::-webkit-scrollbar-thumb:hover {
+      background: var(--lcars-tanoi);
     }
   </style>
 </head>
 <body>
-  <header role="banner">
-    <div class="header-bar">
+
+  <!-- LCARS Header -->
+  <div class="lcars-header">
+    <div class="lcars-corner-left"></div>
+    <div class="lcars-title-bar">
       <h1>Gary W. Floyd</h1>
     </div>
-    <div class="header-content">
-      <div class="side-bar">
-        <div class="side-panel">Systems</div>
-        <div class="side-panel">AI Core</div>
-        <div class="side-panel">Automation</div>
-        <div class="side-panel">Status</div>
-      </div>
-      <div class="main-content">
-        <p class="tagline">Systems Engineer • AI Architect • Industrial Automation Specialist</p>
-        <p class="tagline">25+ Years Professional | 45+ Years Engineering (Since Age 10)</p>
-        <nav class="contact-info" aria-label="contact">
-          <a href="mailto:darkt22002@gmail.com">darkt22002@gmail.com</a>
-          <a href="tel:+12087477044">208-747-7044</a>
-          <span>New Caney, Texas</span>
-        </nav>
-      </div>
+    <div class="lcars-corner-right"></div>
+  </div>
+
+  <!-- Main Container -->
+  <div class="lcars-container">
+    
+    <!-- Left Panel -->
+    <div class="lcars-left-panel">
+      <div class="lcars-button orange">Systems</div>
+      <div class="lcars-button blue">AI Core</div>
+      <div class="lcars-button tanoi">Automation</div>
+      <div class="lcars-button peach">Industrial</div>
+      <div class="lcars-button gold">Research</div>
+      <div class="lcars-button red">Hardware</div>
+      <div class="lcars-spacer"></div>
+      <div class="lcars-elbow left">Status</div>
+      <div class="lcars-button lilac">Online</div>
+      <div class="lcars-button blue">Active</div>
+      <div class="lcars-spacer"></div>
+      <div class="lcars-elbow left">Access</div>
+      <div class="lcars-button orange">Level 10</div>
     </div>
-  </header>
 
-  <main id="content">
-    <section class="intro" aria-labelledby="about">
-      <div class="container intro-content">
-        <p>Multi-disciplinary systems engineer with <strong>25+ years of professional industrial automation experience</strong> and <strong>45+ years of self-guided electronics and systems engineering</strong> (ham radio at age 10, mentored by VP of IT at Ashland Oil). I cross boundaries: hardware ↔ software, firmware ↔ cloud, theory ↔ production.</p>
-        <p style="margin-top:20px;">From offshore drilling control systems to novel AI frameworks to casting aluminum for CNC parts—I work from first principles and deliver practical, maintainable systems.</p>
-        <p style="margin-top:20px;"><strong>Open to contract, consulting, and full-time roles</strong> in AI infrastructure, industrial automation, control systems, and complex systems integration.</p>
-      </div>
-    </section>
-
-    <section aria-labelledby="foundation">
-      <div class="container">
-        <h2 id="foundation">Foundation: From COBOL to Modern AI</h2>
-        <p style="font-size:1.1em; margin-bottom:30px;">Ham radio at 10 led to RF, telecoms, and distributed systems. By 16, built an ArcNet network tied to radio repeaters. Professional career began in mid-1990s with enterprise automation. 45+ years of continuous learning across computing revolutions.</p>
-
-        <div class="timeline" role="list">
-          <div class="timeline-item" role="listitem"><strong>Early 1980s:</strong> FCC Amateur Radio (Extra Class); RF/electronics mentorship; magnetic bubble memory systems (Casio)</div>
-          <div class="timeline-item" role="listitem"><strong>1988:</strong> ArcNet + ham repeater remote dialup; AutoCAD R10 (now 37+ years CAD experience)</div>
-          <div class="timeline-item" role="listitem"><strong>Early-Mid 1990s:</strong> COBOL, Pascal, Assembly, C programming; DOS → early Windows systems</div>
-          <div class="timeline-item" role="listitem"><strong>1995–2000:</strong> Senior IT Engineer @ Compaq — enterprise infrastructure + automation</div>
-          <div class="timeline-item" role="listitem"><strong>2000–2010:</strong> Enterprise contractor (Target, Level 3, NCR, 7-Eleven) — C++, Java, SQL</div>
-          <div class="timeline-item" role="listitem"><strong>2003:</strong> SolidWorks adoption (22+ years 3D CAD)</div>
-          <div class="timeline-item" role="listitem"><strong>2010–2017:</strong> CEO/Founder — IRSI Robotics; PLC programming (LAD, STL, SCL, SFC, FBD)</div>
-          <div class="timeline-item" role="listitem"><strong>2016–2017:</strong> Beck Automation (Mumbai) — international automation projects</div>
-          <div class="timeline-item" role="listitem"><strong>2018–2020:</strong> Kepware/OPC UA projects; Python automation scripting</div>
-          <div class="timeline-item" role="listitem"><strong>2020–2024:</strong> Modern stack: Python, JavaScript, TypeScript, Rust, Docker, PostgreSQL</div>
-          <div class="timeline-item" role="listitem"><strong>2024–Present:</strong> Nexus distributed AI; llama.cpp, C++17 (AI internals), CUDA, Flask, SocketIO</div>
-        </div>
-      </div>
-    </section>
-
-    <section aria-labelledby="languages">
-      <div class="container">
-        <h2 id="languages">Programming Languages & Technologies</h2>
+    <!-- Main Content -->
+    <div class="lcars-main">
+      
+      <!-- Introduction Panel -->
+      <div class="lcars-panel">
+        <h2>Systems Engineer • AI Architect • Industrial Automation</h2>
+        <p style="font-size:1.15em; color:var(--lcars-gold); font-weight:700;">25+ Years Professional Experience | 45+ Years Engineering (Since Age 10)</p>
         
-        <div class="tech-category">
-          <h4>Legacy & Historical (1980s–2000s)</h4>
-          <div class="tech-tags">
-            <span class="tech-tag">COBOL</span>
-            <span class="tech-tag">Pascal</span>
-            <span class="tech-tag">Assembly (6502, x86)</span>
-            <span class="tech-tag">BASIC</span>
-            <span class="tech-tag">Fortran</span>
-            <span class="tech-tag">Perl</span>
-            <span class="tech-tag">VBScript</span>
-          </div>
-        </div>
-
-        <div class="tech-category">
-          <h4>Systems & Low-Level (1990s–Present)</h4>
-          <div class="tech-tags">
-            <span class="tech-tag">C</span>
-            <span class="tech-tag">C++</span>
-            <span class="tech-tag">C++17 (AI/ML)</span>
-            <span class="tech-tag">CUDA</span>
-            <span class="tech-tag">Bash/Shell</span>
-            <span class="tech-tag">PowerShell</span>
-          </div>
-        </div>
-
-        <div class="tech-category">
-          <h4>Enterprise & Application (2000s–Present)</h4>
-          <div class="tech-tags">
-            <span class="tech-tag">Java</span>
-            <span class="tech-tag">C#/.NET</span>
-            <span class="tech-tag">Python</span>
-            <span class="tech-tag">JavaScript</span>
-            <span class="tech-tag">TypeScript</span>
-            <span class="tech-tag">PHP</span>
-            <span class="tech-tag">Ruby</span>
-          </div>
-        </div>
-
-        <div class="tech-category">
-          <h4>Modern & Systems (2020s)</h4>
-          <div class="tech-tags">
-            <span class="tech-tag">Rust</span>
-            <span class="tech-tag">Go</span>
-            <span class="tech-tag">Kotlin</span>
-            <span class="tech-tag">Swift</span>
-          </div>
-        </div>
-
-        <div class="tech-category">
-          <h4>PLC & Industrial (1995–Present)</h4>
-          <div class="tech-tags">
-            <span class="tech-tag">Ladder Logic (LAD)</span>
-            <span class="tech-tag">Structured Text (ST/SCL)</span>
-            <span class="tech-tag">Function Block (FBD)</span>
-            <span class="tech-tag">Sequential Function Chart (SFC)</span>
-            <span class="tech-tag">Statement List (STL)</span>
-            <span class="tech-tag">Instruction List (IL)</span>
-          </div>
-        </div>
-
-        <div class="tech-category">
-          <h4>Web & Frontend</h4>
-          <div class="tech-tags">
-            <span class="tech-tag">HTML/CSS</span>
-            <span class="tech-tag">React</span>
-            <span class="tech-tag">Vue.js</span>
-            <span class="tech-tag">Node.js</span>
-            <span class="tech-tag">Express</span>
-            <span class="tech-tag">Flask</span>
-            <span class="tech-tag">FastAPI</span>
-          </div>
-        </div>
-
-        <div class="tech-category">
-          <h4>Databases & Data</h4>
-          <div class="tech-tags">
-            <span class="tech-tag">PostgreSQL</span>
-            <span class="tech-tag">MySQL/MariaDB</span>
-            <span class="tech-tag">SQL Server</span>
-            <span class="tech-tag">Oracle</span>
-            <span class="tech-tag">MongoDB</span>
-            <span class="tech-tag">Redis</span>
-            <span class="tech-tag">SQLite</span>
-            <span class="tech-tag">Vector DBs (pgvector)</span>
-          </div>
-        </div>
-
-        <div class="tech-category">
-          <h4>AI/ML Frameworks & Tools</h4>
-          <div class="tech-tags">
-            <span class="tech-tag">llama.cpp</span>
-            <span class="tech-tag">PyTorch</span>
-            <span class="tech-tag">TensorFlow</span>
-            <span class="tech-tag">scikit-learn</span>
-            <span class="tech-tag">NumPy/SciPy</span>
-            <span class="tech-tag">Pandas</span>
-            <span class="tech-tag">Transformers</span>
-            <span class="tech-tag">LangChain</span>
-          </div>
-        </div>
-
-        <div class="tech-category">
-          <h4>DevOps & Infrastructure</h4>
-          <div class="tech-tags">
-            <span class="tech-tag">Docker</span>
-            <span class="tech-tag">Kubernetes</span>
-            <span class="tech-tag">Git/GitHub</span>
-            <span class="tech-tag">CI/CD</span>
-            <span class="tech-tag">Linux (Debian/Ubuntu)</span>
-            <span class="tech-tag">VMware</span>
-            <span class="tech-tag">Nginx</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section aria-labelledby="ides">
-      <div class="container">
-        <h2 id="ides">Development Environments & Tools</h2>
+        <p>Multi-disciplinary systems engineer with <strong style="color:var(--lcars-gold);">25+ years of professional industrial automation experience</strong> and <strong style="color:var(--lcars-gold);">45+ years of self-guided electronics and systems engineering</strong>. Started with ham radio at age 10, mentored by VP of IT at Ashland Oil.</p>
         
-        <div class="tech-category">
-          <h4>IDEs & Editors (Historical to Modern)</h4>
-          <div class="tech-tags">
-            <span class="tech-tag">Turbo Pascal IDE</span>
-            <span class="tech-tag">Microsoft Visual Studio</span>
-            <span class="tech-tag">Visual Studio Code</span>
-            <span class="tech-tag">PyCharm</span>
-            <span class="tech-tag">IntelliJ IDEA</span>
-            <span class="tech-tag">Eclipse</span>
-            <span class="tech-tag">NetBeans</span>
-            <span class="tech-tag">Sublime Text</span>
-            <span class="tech-tag">Vim/Neovim</span>
-            <span class="tech-tag">Emacs</span>
-            <span class="tech-tag">JupyterLab</span>
-            <span class="tech-tag">Cursor AI</span>
-          </div>
-        </div>
-
-        <div class="tech-category">
-          <h4>Industrial Programming Environments</h4>
-          <div class="tech-tags">
-            <span class="tech-tag">Siemens TIA Portal</span>
-            <span class="tech-tag">Siemens STEP 7</span>
-            <span class="tech-tag">Rockwell Studio 5000</span>
-            <span class="tech-tag">RSLogix 5000/500</span>
-            <span class="tech-tag">Omron Sysmac Studio</span>
-            <span class="tech-tag">Beckhoff TwinCAT</span>
-            <span class="tech-tag">Schneider Unity Pro</span>
-            <span class="tech-tag">CoDeSys</span>
-          </div>
-        </div>
-
-        <div class="tech-category">
-          <h4>CAD/CAM/Engineering</h4>
-          <div class="tech-tags">
-            <span class="tech-tag">AutoCAD (37+ yrs)</span>
-            <span class="tech-tag">SolidWorks (22+ yrs)</span>
-            <span class="tech-tag">FreeCAD (10+ yrs)</span>
-            <span class="tech-tag">Fusion 360</span>
-            <span class="tech-tag">KiCAD</span>
-            <span class="tech-tag">Blender</span>
-            <span class="tech-tag">ParaView</span>
-            <span class="tech-tag">EPLAN</span>
-            <span class="tech-tag">AutoCAD Electrical</span>
-          </div>
-        </div>
-
-        <div class="tech-category">
-          <h4>Specialized Tools</h4>
-          <div class="tech-tags">
-            <span class="tech-tag">Wireshark</span>
-            <span class="tech-tag">Postman</span>
-            <span class="tech-tag">DBeaver</span>
-            <span class="tech-tag">PuTTY/SSH</span>
-            <span class="tech-tag">WinSCP/FileZilla</span>
-            <span class="tech-tag">Klipper (3D Print)</span>
-            <span class="tech-tag">LinuxCNC</span>
-            <span class="tech-tag">Kepware</span>
-          </div>
+        <p>From offshore drilling control systems to novel AI frameworks to casting aluminum for CNC parts—I work from first principles and deliver practical, maintainable systems.</p>
+        
+        <div class="contact-bar">
+          <a href="mailto:darkt22002@gmail.com">Email</a>
+          <a href="tel:+12087477044">208-747-7044</a>
+          <a href="https://github.com/darkt22002/wiper" target="_blank">GitHub: Wiper</a>
+          <span style="color:var(--lcars-gold); padding:8px 20px; font-weight:700;">New Caney, Texas</span>
         </div>
       </div>
-    </section>
 
-    <section style="background:#0d0d0d;" aria-labelledby="nexus">
-      <div class="container">
-        <h2 id="nexus">Nexus: Distributed AI Architecture</h2>
-
-        <div class="highlight-box" role="note">
-          <strong>Note:</strong> Implementation details (algorithms, weight functions, orchestration logic) are proprietary pending patent filing.
+      <!-- Nexus AI -->
+      <div class="lcars-panel alt">
+        <h2>Nexus: Distributed AI Architecture</h2>
+        
+        <div class="highlight-box">
+          <strong style="color:var(--lcars-orange); font-size:1.1em;">Note:</strong> Implementation details (algorithms, weight functions, orchestration logic) are proprietary pending patent filing.
         </div>
-
-        <p style="font-size:1.1em; margin-bottom:24px;">Production distributed AI implementing the <strong>Guided Entropy Principle (GEP)</strong> for attention, memory, and decision-making as guided entropy flow through weighted information systems.</p>
-
+        
+        <p style="font-size:1.1em;">Production distributed AI implementing the <strong style="color:var(--lcars-gold);">Guided Entropy Principle (GEP)</strong> for attention, memory, and decision-making as guided entropy flow through weighted information systems.</p>
+        
         <h3>Technical Architecture</h3>
         <ul>
           <li><strong>Compute:</strong> 120+ CPU cores (Dell R810, HP DL380p Gen8, Asus ROG)</li>
@@ -587,27 +603,48 @@
           <li><strong>Web:</strong> Flask, SocketIO, real-time streaming</li>
           <li><strong>Stack:</strong> Python, C++, CUDA, Bash, PostgreSQL, Debian Linux</li>
         </ul>
-
+        
         <h3>Guided Entropy Principle (GEP)</h3>
         <div class="equation">E(x) = dS/dt × w<sub>c</sub> × w<sub>d</sub> × w<sub>r</sub></div>
-        <p><strong>Framework bridging information theory, cognitive science, thermodynamics, and AI.</strong></p>
+        
+        <p><strong style="color:var(--lcars-gold); font-size:1.1em;">Framework bridging information theory, cognitive science, thermodynamics, and AI.</strong></p>
+        
         <ul>
           <li><strong>dS/dt:</strong> Entropy flow rate (information change)</li>
           <li><strong>w<sub>c</sub>:</strong> Context weight (situational relevance)</li>
           <li><strong>w<sub>d</sub>:</strong> Depth weight (fundamental importance, ethics)</li>
           <li><strong>w<sub>r</sub>:</strong> Relevance weight (goal alignment)</li>
         </ul>
-
+        
         <div class="highlight-box">
-          <h4>Journey: Jan 2024 → Oct 2024</h4>
-          <p>From baseline curiosity to production distributed AI cluster in 10 months. 10,000+ trial validation. 100+ pages documentation. Academic paper in preparation.</p>
+          <h4>Journey: Jan 2024 → Present</h4>
+          <p>From baseline curiosity to production distributed AI cluster. 10,000+ trial validation. 100+ pages documentation. Academic paper in preparation.</p>
         </div>
       </div>
-    </section>
 
-    <section aria-labelledby="industrial">
-      <div class="container">
-        <h2 id="industrial">Industrial Automation & Control Systems</h2>
+      <!-- Foundation Timeline -->
+      <div class="lcars-panel">
+        <h2>Foundation: From COBOL to Modern AI</h2>
+        <p style="font-size:1.1em; margin-bottom:20px;">Ham radio at 10 led to RF, telecoms, and distributed systems. By 16, built an ArcNet network tied to radio repeaters. Professional career began in mid-1990s with enterprise automation. 45+ years of continuous learning across computing revolutions.</p>
+        
+        <div class="timeline">
+          <div class="timeline-item"><strong>Early 1980s:</strong> FCC Amateur Radio (Extra Class); RF/electronics mentorship; magnetic bubble memory systems (Casio)</div>
+          <div class="timeline-item"><strong>1988:</strong> ArcNet + ham repeater remote dialup; AutoCAD R10 (now 37+ years CAD experience)</div>
+          <div class="timeline-item"><strong>Early-Mid 1990s:</strong> COBOL, Pascal, Assembly, C programming; DOS → early Windows systems</div>
+          <div class="timeline-item"><strong>1995–2000:</strong> Senior IT Engineer @ Compaq — enterprise infrastructure + automation</div>
+          <div class="timeline-item"><strong>2000–2010:</strong> Enterprise contractor (Target, Level 3, NCR, 7-Eleven) — C++, Java, SQL</div>
+          <div class="timeline-item"><strong>2003:</strong> SolidWorks adoption (22+ years 3D CAD)</div>
+          <div class="timeline-item"><strong>2010–2017:</strong> CEO/Founder — IRSI Robotics; PLC programming (LAD, STL, SCL, SFC, FBD)</div>
+          <div class="timeline-item"><strong>2016–2017:</strong> Beck Automation (Mumbai) — international automation projects</div>
+          <div class="timeline-item"><strong>2018–2020:</strong> Kepware/OPC UA projects; Python automation scripting</div>
+          <div class="timeline-item"><strong>2020–2024:</strong> Modern stack: Python, JavaScript, TypeScript, Rust, Docker, PostgreSQL</div>
+          <div class="timeline-item"><strong>2024–Present:</strong> Nexus distributed AI; llama.cpp, C++17 (AI internals), CUDA, Flask, SocketIO</div>
+        </div>
+      </div>
+
+      <!-- Industrial Automation -->
+      <div class="lcars-panel alt">
+        <h2>Industrial Automation & Control Systems</h2>
         
         <div class="project-card">
           <h3>Daybreak Foods (Wisconsin) — 2018–2019</h3>
@@ -618,7 +655,7 @@
             <li>MES connectivity and predictive alerts</li>
           </ul>
         </div>
-
+        
         <div class="project-card">
           <h3>R&D Plastics (Chicago) — 2019–2020</h3>
           <h4>MES Integration & Part Traceability</h4>
@@ -627,7 +664,7 @@
             <li>Real-time defect tracking; quality compliance</li>
           </ul>
         </div>
-
+        
         <div class="project-card">
           <h3>IRSI Robotics — CEO/Founder — 2010–2017</h3>
           <h4>Industrial Automation Integration</h4>
@@ -637,61 +674,83 @@
             <li>PLC/HMI/SCADA; safety PLCs; commissioning</li>
           </ul>
         </div>
-
-        <h3>Fortune 500 Clients</h3>
-        <div class="timeline" role="list">
-          <div class="timeline-item" role="listitem"><strong>Compaq:</strong> Senior IT Engineer (1995–2000)</div>
-          <div class="timeline-item" role="listitem"><strong>Target:</strong> Enterprise LAN/WAN, Cisco (2005–2008)</div>
-          <div class="timeline-item" role="listitem"><strong>Level 3:</strong> Critical telecom infrastructure (2017)</div>
-          <div class="timeline-item" role="listitem"><strong>NCR:</strong> Enterprise infrastructure + DB admin</div>
-          <div class="timeline-item" role="listitem"><strong>7-Eleven:</strong> Retail network architecture</div>
-        </div>
-
-        <h3>Industrial Platforms & Protocols</h3>
-        <div class="tech-category">
-          <h4>PLC Platforms</h4>
-          <div class="tech-tags">
-            <span class="tech-tag">Siemens S7-400</span>
-            <span class="tech-tag">Siemens PCS 7</span>
-            <span class="tech-tag">Rockwell ControlLogix</span>
-            <span class="tech-tag">CompactLogix</span>
-            <span class="tech-tag">Allen-Bradley</span>
-            <span class="tech-tag">Omron</span>
-            <span class="tech-tag">Schneider Electric</span>
-          </div>
-        </div>
-
-        <div class="tech-category">
-          <h4>Industrial Networking</h4>
-          <div class="tech-tags">
-            <span class="tech-tag">OPC DA/UA</span>
-            <span class="tech-tag">Kepware</span>
-            <span class="tech-tag">EtherNet/IP</span>
-            <span class="tech-tag">Modbus TCP/RTU</span>
-            <span class="tech-tag">PROFIBUS</span>
-            <span class="tech-tag">PROFINET</span>
-            <span class="tech-tag">DeviceNet</span>
-          </div>
-        </div>
-
-        <div class="tech-category">
-          <h4>SCADA & HMI</h4>
-          <div class="tech-tags">
-            <span class="tech-tag">WinCC</span>
-            <span class="tech-tag">FactoryTalk View</span>
-            <span class="tech-tag">Ignition</span>
-            <span class="tech-tag">Wonderware</span>
-            <span class="tech-tag">Citect</span>
-          </div>
+        
+        <h3>Fortune 500 Experience</h3>
+        <div class="timeline">
+          <div class="timeline-item"><strong>Compaq:</strong> Senior IT Engineer (1995–2000)</div>
+          <div class="timeline-item"><strong>Target:</strong> Enterprise LAN/WAN, Cisco (2005–2008)</div>
+          <div class="timeline-item"><strong>Level 3:</strong> Critical telecom infrastructure (2017)</div>
+          <div class="timeline-item"><strong>NCR:</strong> Enterprise infrastructure + DB admin</div>
+          <div class="timeline-item"><strong>7-Eleven:</strong> Retail network architecture</div>
         </div>
       </div>
-    </section>
 
-    <section aria-labelledby="lab">
-      <div class="container">
-        <h2 id="lab">Personal R&D Lab</h2>
-        <p style="font-size:1.1em; margin-bottom:24px;">Hands-on R&D across materials, machining, electronics—keeping skills sharp and solutions grounded in physical reality.</p>
+      <!-- Technical Stack -->
+      <div class="lcars-panel">
+        <h2>Core Technologies</h2>
+        
+        <h3>Programming Languages</h3>
+        <div class="tech-grid">
+          <div class="tech-item">Python</div>
+          <div class="tech-item">C++</div>
+          <div class="tech-item">C</div>
+          <div class="tech-item">Rust</div>
+          <div class="tech-item">JavaScript</div>
+          <div class="tech-item">TypeScript</div>
+          <div class="tech-item">Java</div>
+          <div class="tech-item">C#</div>
+          <div class="tech-item">Go</div>
+          <div class="tech-item">CUDA</div>
+          <div class="tech-item">Assembly</div>
+          <div class="tech-item">Bash</div>
+        </div>
+        
+        <h3>Industrial Control</h3>
+        <div class="tech-grid">
+          <div class="tech-item">Ladder Logic</div>
+          <div class="tech-item">SCL/ST</div>
+          <div class="tech-item">FBD</div>
+          <div class="tech-item">SFC</div>
+          <div class="tech-item">STL/IL</div>
+          <div class="tech-item">Siemens S7</div>
+          <div class="tech-item">Rockwell</div>
+          <div class="tech-item">OPC UA</div>
+          <div class="tech-item">Modbus</div>
+          <div class="tech-item">EtherNet/IP</div>
+          <div class="tech-item">PROFINET</div>
+          <div class="tech-item">Kepware</div>
+        </div>
+        
+        <h3>AI/ML & Databases</h3>
+        <div class="tech-grid">
+          <div class="tech-item">llama.cpp</div>
+          <div class="tech-item">PyTorch</div>
+          <div class="tech-item">TensorFlow</div>
+          <div class="tech-item">PostgreSQL</div>
+          <div class="tech-item">pgvector</div>
+          <div class="tech-item">Redis</div>
+          <div class="tech-item">MongoDB</div>
+          <div class="tech-item">SQL Server</div>
+        </div>
+        
+        <h3>DevOps & Infrastructure</h3>
+        <div class="tech-grid">
+          <div class="tech-item">Docker</div>
+          <div class="tech-item">Kubernetes</div>
+          <div class="tech-item">Linux</div>
+          <div class="tech-item">VMware</div>
+          <div class="tech-item">Git</div>
+          <div class="tech-item">Nginx</div>
+          <div class="tech-item">Flask</div>
+          <div class="tech-item">SocketIO</div>
+        </div>
+      </div>
 
+      <!-- R&D Lab -->
+      <div class="lcars-panel alt">
+        <h2>Personal R&D Laboratory</h2>
+        <p style="font-size:1.1em; margin-bottom:20px;">Hands-on R&D across materials, machining, electronics—keeping skills sharp and solutions grounded in physical reality.</p>
+        
         <h3>Capabilities</h3>
         <ul>
           <li><strong>Materials:</strong> Aluminum smelting/casting (1200°F+), greensand patterns, metallurgy</li>
@@ -700,17 +759,28 @@
           <li><strong>3D Printing:</strong> PEEK/PEI (400°C hotend, 80-100°C chamber); Klipper + Python macros</li>
           <li><strong>Electronics:</strong> PCB design (KiCAD), embedded systems, ARM/microcontrollers, RF</li>
         </ul>
+        
+        <h3>CAD/CAM Tools</h3>
+        <div class="tech-grid">
+          <div class="tech-item">AutoCAD 37yr</div>
+          <div class="tech-item">SolidWorks 22yr</div>
+          <div class="tech-item">FreeCAD 10yr</div>
+          <div class="tech-item">Fusion 360</div>
+          <div class="tech-item">KiCAD</div>
+          <div class="tech-item">Blender</div>
+          <div class="tech-item">ParaView</div>
+          <div class="tech-item">LinuxCNC</div>
+        </div>
       </div>
-    </section>
 
-    <section aria-labelledby="research">
-      <div class="container">
-        <h2 id="research">Research & Publications</h2>
-
+      <!-- Research -->
+      <div class="lcars-panel">
+        <h2>Research & Publications</h2>
+        
         <div class="project-card">
           <h3>Guided Entropy Principle (GEP): A Novel Framework for Intelligence & Decision-Making</h3>
           <p style="font-size:1.1em; margin:18px 0;">GEP frames consciousness, learning, and intelligence as guided entropy flow through weighted information systems.</p>
-
+          
           <h4>Key Contributions</h4>
           <ul>
             <li>Unifies entropy dynamics with weighted information processing</li>
@@ -719,44 +789,65 @@
             <li>Production deployment in distributed AI cluster</li>
             <li>Bridges thermodynamic and information-theoretic entropy with cognitive attention</li>
           </ul>
-
-          <p style="margin-top:16px;"><strong>Status:</strong> Paper in preparation • <strong>Docs:</strong> 100+ pages • <strong>Timeline:</strong> Jan–Oct 2024</p>
+          
+          <p style="margin-top:16px; color:var(--lcars-gold); font-weight:700;"><strong>Status:</strong> Paper in preparation • <strong>Docs:</strong> 100+ pages • <strong>Timeline:</strong> Jan–Oct 2024</p>
         </div>
       </div>
-    </section>
 
-    <section>
-      <div class="container">
+      <!-- Philosophy -->
+      <div class="lcars-panel alt">
         <h2>Engineering Philosophy</h2>
-        <div class="philosophy-quote">"Bend with guardrails, don't break against them."</div>
-        <p style="font-size:1.1em; margin:22px 0; text-align:center;">I learn whatever's required to solve hard problems correctly, then build working systems and document them so others can run with it.</p>
-      </div>
-    </section>
-
-    <section aria-labelledby="cta">
-      <div class="container">
-        <div class="cta-box">
-          <h3 id="cta">Available for Contract & Full-Time Opportunities</h3>
-          <p style="font-size:1.2em; margin:20px 0; color:var(--lcars-gold);">AI Infrastructure • Industrial Automation • Control Systems • Complex Integration</p>
-          <div style="margin:30px 0;">
-            <a href="mailto:darkt22002@gmail.com">Email Me</a>
-            <a href="tel:+12087477044">Call: 208-747-7044</a>
-          </div>
-          <p style="font-size:1.05em; color:var(--lcars-text);">New Caney, Texas (open to relocation or offshore rotations)</p>
+        <div style="text-align:center; font-size:2em; color:var(--lcars-gold); font-weight:700; margin:30px 0; padding:30px; border-top:4px solid var(--lcars-orange); border-bottom:4px solid var(--lcars-orange); text-transform:uppercase; letter-spacing:0.1em;">
+          "Bend with guardrails, don't break against them."
         </div>
+        <p style="font-size:1.15em; text-align:center; color:var(--lcars-text);">I learn whatever's required to solve hard problems correctly, then build working systems and document them so others can run with it.</p>
       </div>
-    </section>
-  </main>
 
-  <footer role="contentinfo">
-    <div class="container">
-      <p>&copy; 2024–2025 Gary W. Floyd. All rights reserved.</p>
-      <p style="margin-top:12px;">"Nexus-Core" and "Guided Entropy Principle (GEP)" are proprietary works; certain aspects may be patent pending.</p>
-      <p style="margin-top:15px;">
-        <a href="mailto:darkt22002@gmail.com">darkt22002@gmail.com</a> &nbsp;|&nbsp;
-        <a href="tel:+12087477044">208-747-7044</a>
-      </p>
+      <!-- CTA -->
+      <div class="cta-section">
+        <h2>Available for Contract & Full-Time Opportunities</h2>
+        <p style="font-size:1.3em; color:var(--lcars-gold); font-weight:700; margin:20px 0;">AI Infrastructure • Industrial Automation • Control Systems • Complex Integration</p>
+        
+        <div class="cta-buttons">
+          <a href="mailto:darkt22002@gmail.com" class="cta-button">Email</a>
+          <a href="tel:+12087477044" class="cta-button">Call</a>
+          <a href="https://github.com/darkt22002/wiper" target="_blank" class="cta-button">GitHub</a>
+        </div>
+        
+        <p style="font-size:1.1em; color:var(--lcars-text); font-weight:700;">New Caney, Texas (Open to Relocation or Offshore Rotations)</p>
+      </div>
+
     </div>
-  </footer>
+
+    <!-- Right Panel -->
+    <div class="lcars-right-panel lcars-left-panel">
+      <div class="lcars-elbow">Monitor</div>
+      <div class="lcars-button orange">47-001</div>
+      <div class="lcars-button blue">47-002</div>
+      <div class="lcars-button tanoi">47-003</div>
+      <div class="lcars-spacer"></div>
+      <div class="lcars-button peach">Systems</div>
+      <div class="lcars-button gold">Nominal</div>
+      <div class="lcars-spacer"></div>
+      <div class="lcars-elbow">Network</div>
+      <div class="lcars-button blue">Primary</div>
+      <div class="lcars-button orange">Secure</div>
+      <div class="lcars-spacer"></div>
+      <div class="lcars-button red">Stand By</div>
+    </div>
+
+  </div>
+
+  <!-- Footer -->
+  <div class="lcars-footer">
+    <p>&copy; 2024–2025 Gary W. Floyd. All rights reserved.</p>
+    <p style="margin-top:12px;">"Nexus-Core" and "Guided Entropy Principle (GEP)" are proprietary works; certain aspects may be patent pending.</p>
+    <p style="margin-top:15px;">
+      <a href="mailto:darkt22002@gmail.com">darkt22002@gmail.com</a> &nbsp;|&nbsp;
+      <a href="tel:+12087477044">208-747-7044</a> &nbsp;|&nbsp;
+      <a href="https://github.com/darkt22002/wiper" target="_blank">GitHub: Wiper Project</a>
+    </p>
+  </div>
+
 </body>
 </html>
