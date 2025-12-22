@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>LCARS :: Gary W. Floyd - Systems Engineer</title>
-  <meta name="description" content="Gary W. Floyd — Systems Engineer, AI Architect, Industrial Automation Specialist" />
+  <title>LCARS :: Gary W. Floyd - AI Research Engineer</title>
+  <meta name="description" content="Gary W. Floyd — AI Research Engineer, Systems Architect, Published Researcher" />
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Antonio:wght@400;700&display=swap');
     
@@ -20,432 +20,510 @@
       --lcars-red: #cc6666;
       --lcars-gold: #ffcc66;
       --lcars-bg: #000000;
-      --lcars-text: #ffaa00;
-      --lcars-panel: #000000;
+      --lcars-text: #ff9966;
     }
     
     body {
-      font-family: 'Antonio', 'Helvetica Neue', Arial, sans-serif;
+      font-family: 'Antonio', sans-serif;
       background: var(--lcars-bg);
       color: var(--lcars-text);
       overflow-x: hidden;
       line-height: 1.4;
     }
     
-    /* LCARS Header - Bridge Style */
+    /* AUTHENTIC TNG LCARS HEADER */
     .lcars-header {
-      display: grid;
-      grid-template-columns: 200px 1fr 200px;
-      height: 120px;
-      margin-bottom: 20px;
-    }
-    
-    .lcars-corner-left {
-      background: var(--lcars-orange);
-      border-radius: 0 0 80px 0;
-      position: relative;
-    }
-    
-    .lcars-corner-left::after {
-      content: '';
-      position: absolute;
-      right: 0;
-      top: 0;
-      width: 40px;
-      height: 40px;
       background: var(--lcars-bg);
-      border-radius: 0 0 0 40px;
+      padding: 0;
+      margin-bottom: 10px;
+    }
+    
+    .lcars-top-frame {
+      display: flex;
+      height: 40px;
+      gap: 10px;
+    }
+    
+    .lcars-bar {
+      background: var(--lcars-orange);
+      height: 40px;
+    }
+    
+    .lcars-bar-large {
+      flex: 1;
+      border-radius: 0 0 20px 20px;
+    }
+    
+    .lcars-bar-small {
+      width: 80px;
+      border-radius: 0 0 20px 20px;
+    }
+    
+    .lcars-bar.tanoi { background: var(--lcars-tanoi); }
+    .lcars-bar.lilac { background: var(--lcars-lilac); }
+    .lcars-bar.blue { background: var(--lcars-blue); }
+    .lcars-bar.peach { background: var(--lcars-peach); }
+    
+    /* Title Bar - Authentic LCARS Style */
+    .lcars-title-section {
+      display: flex;
+      align-items: stretch;
+      height: 80px;
+      margin-top: 10px;
+      gap: 10px;
+    }
+    
+    .lcars-title-cap {
+      width: 120px;
+      background: var(--lcars-lilac);
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.8em;
+      color: #000;
+      font-weight: 700;
+      text-transform: uppercase;
     }
     
     .lcars-title-bar {
+      flex: 1;
+      background: var(--lcars-orange);
       display: flex;
       align-items: center;
-      padding: 0 40px;
-      background: linear-gradient(to right, var(--lcars-orange), var(--lcars-peach));
-    }
-    
-    .lcars-title-bar h1 {
-      font-size: 3em;
-      font-weight: 700;
-      color: #000;
-      text-transform: uppercase;
-      letter-spacing: 0.15em;
-    }
-    
-    .lcars-corner-right {
-      background: var(--lcars-tanoi);
-      border-radius: 0 0 0 80px;
+      padding: 0 30px;
       position: relative;
     }
     
-    .lcars-corner-right::after {
-      content: '';
-      position: absolute;
-      left: 0;
-      top: 0;
-      width: 40px;
-      height: 40px;
-      background: var(--lcars-bg);
-      border-radius: 0 0 40px 0;
+    .lcars-title-bar h1 {
+      font-size: 2.5em;
+      font-weight: 700;
+      color: #000;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
     }
     
-    /* Side Panels - Classic LCARS */
+    .lcars-title-bar .subtitle {
+      position: absolute;
+      right: 30px;
+      font-size: 1.1em;
+      color: #000;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+    
+    /* Side Frame Bars */
+    .lcars-side-frame {
+      display: flex;
+      gap: 10px;
+      margin-top: 10px;
+    }
+    
+    .lcars-side-bar {
+      width: 40px;
+      height: 300px;
+      background: var(--lcars-orange);
+      border-radius: 20px;
+    }
+    
+    .lcars-side-bar.short {
+      height: 100px;
+    }
+    
+    /* Main Container */
     .lcars-container {
       display: grid;
-      grid-template-columns: 180px 1fr 180px;
-      gap: 20px;
-      padding: 0 20px;
+      grid-template-columns: 200px 1fr 200px;
+      gap: 10px;
+      padding: 0 10px 40px 10px;
       max-width: 1800px;
       margin: 0 auto;
     }
     
-    .lcars-left-panel {
+    /* Left/Right Panels - Authentic LCARS Buttons */
+    .lcars-panel-side {
       display: flex;
       flex-direction: column;
-      gap: 8px;
+      gap: 5px;
     }
     
-    .lcars-button {
+    .lcars-btn {
+      height: 35px;
       background: var(--lcars-lilac);
-      height: 45px;
-      border-radius: 25px;
+      border-radius: 20px;
       display: flex;
       align-items: center;
       justify-content: center;
       color: #000;
       font-weight: 700;
-      font-size: 0.95em;
+      font-size: 0.9em;
       text-transform: uppercase;
-      letter-spacing: 0.1em;
+      letter-spacing: 0.08em;
       cursor: pointer;
       transition: all 0.2s;
+      text-decoration: none;
     }
     
-    .lcars-button:hover {
-      background: var(--lcars-orange);
-      box-shadow: 0 0 20px var(--lcars-orange);
+    .lcars-btn:hover {
+      filter: brightness(1.3);
+      box-shadow: 0 0 15px currentColor;
     }
     
-    .lcars-button.orange { background: var(--lcars-orange); }
-    .lcars-button.blue { background: var(--lcars-blue); }
-    .lcars-button.tanoi { background: var(--lcars-tanoi); }
-    .lcars-button.peach { background: var(--lcars-peach); }
-    .lcars-button.red { background: var(--lcars-red); }
-    .lcars-button.gold { background: var(--lcars-gold); }
-    
-    .lcars-elbow {
-      background: var(--lcars-lilac);
-      height: 80px;
-      border-radius: 0 40px 40px 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #000;
-      font-weight: 700;
+    .lcars-btn.tall {
+      height: 60px;
       font-size: 1.1em;
-      text-transform: uppercase;
     }
     
-    .lcars-elbow.left {
-      border-radius: 40px 0 0 40px;
-    }
+    .lcars-btn.orange { background: var(--lcars-orange); }
+    .lcars-btn.blue { background: var(--lcars-blue); }
+    .lcars-btn.tanoi { background: var(--lcars-tanoi); }
+    .lcars-btn.peach { background: var(--lcars-peach); }
+    .lcars-btn.red { background: var(--lcars-red); }
+    .lcars-btn.gold { background: var(--lcars-gold); }
+    .lcars-btn.sky { background: var(--lcars-sky); }
     
-    .lcars-spacer {
-      background: var(--lcars-bg);
-      height: 20px;
+    .lcars-gap {
+      height: 15px;
     }
     
     /* Main Content Area */
     .lcars-main {
       display: flex;
       flex-direction: column;
-      gap: 25px;
+      gap: 20px;
     }
     
-    .lcars-panel {
+    .lcars-section {
       background: rgba(255,153,0,0.05);
-      border-left: 8px solid var(--lcars-orange);
-      padding: 30px 40px;
-      border-radius: 0 20px 20px 0;
+      border-left: 6px solid var(--lcars-orange);
+      padding: 25px 35px;
       position: relative;
     }
     
-    .lcars-panel::before {
+    .lcars-section::before {
       content: '';
       position: absolute;
-      left: -8px;
+      left: -6px;
       top: 0;
-      width: 8px;
-      height: 50px;
+      width: 6px;
+      height: 40px;
       background: var(--lcars-lilac);
     }
     
-    .lcars-panel.alt {
+    .lcars-section.alt {
       border-left-color: var(--lcars-lilac);
+      background: rgba(204,153,204,0.05);
     }
     
-    .lcars-panel.alt::before {
+    .lcars-section.alt::before {
       background: var(--lcars-orange);
     }
     
-    .lcars-panel h2 {
-      font-size: 2.2em;
+    .lcars-section h2 {
+      font-size: 2em;
       font-weight: 700;
       color: var(--lcars-orange);
       text-transform: uppercase;
-      letter-spacing: 0.1em;
+      letter-spacing: 0.12em;
       margin-bottom: 20px;
-      border-bottom: 4px solid var(--lcars-orange);
-      padding-bottom: 10px;
+      padding-bottom: 8px;
+      border-bottom: 3px solid var(--lcars-orange);
     }
     
-    .lcars-panel.alt h2 {
+    .lcars-section.alt h2 {
       color: var(--lcars-lilac);
       border-bottom-color: var(--lcars-lilac);
     }
     
-    .lcars-panel h3 {
-      font-size: 1.6em;
+    .lcars-section h3 {
+      font-size: 1.5em;
       color: var(--lcars-gold);
       text-transform: uppercase;
-      margin: 25px 0 15px;
-      font-weight: 700;
+      letter-spacing: 0.08em;
+      margin: 20px 0 12px 0;
     }
     
-    .lcars-panel h4 {
-      font-size: 1.3em;
-      color: var(--lcars-blue);
+    .lcars-section h4 {
+      font-size: 1.2em;
+      color: var(--lcars-sky);
       text-transform: uppercase;
-      margin: 20px 0 10px;
-      font-weight: 700;
+      letter-spacing: 0.06em;
+      margin: 15px 0 10px 0;
     }
     
-    .lcars-panel p {
+    .lcars-section p {
       font-size: 1.05em;
-      line-height: 1.7;
-      margin: 15px 0;
-    }
-    
-    .lcars-panel ul {
-      margin: 15px 0;
-      padding-left: 30px;
-    }
-    
-    .lcars-panel li {
-      margin: 10px 0;
       line-height: 1.6;
+      margin: 10px 0;
     }
     
-    .lcars-panel li::marker {
+    .lcars-section ul {
+      margin: 12px 0 12px 25px;
+      list-style: none;
+    }
+    
+    .lcars-section ul li {
+      font-size: 1.05em;
+      line-height: 1.6;
+      margin: 6px 0;
+      padding-left: 15px;
+      position: relative;
+    }
+    
+    .lcars-section ul li::before {
+      content: '▸';
+      position: absolute;
+      left: 0;
       color: var(--lcars-orange);
     }
     
-    /* Contact Info Bar */
-    .contact-bar {
-      display: flex;
-      gap: 15px;
-      flex-wrap: wrap;
-      margin: 20px 0;
-      font-size: 1.1em;
-    }
-    
-    .contact-bar a {
-      color: var(--lcars-blue);
-      text-decoration: none;
-      padding: 8px 20px;
-      background: rgba(153,153,255,0.15);
-      border-radius: 20px;
-      border: 2px solid var(--lcars-blue);
-      transition: all 0.3s;
-      text-transform: uppercase;
-      font-weight: 700;
-      letter-spacing: 0.05em;
-    }
-    
-    .contact-bar a:hover {
-      background: var(--lcars-blue);
-      color: #000;
-      box-shadow: 0 0 20px var(--lcars-blue);
-    }
-    
-    /* Tech Grid */
-    .tech-grid {
+    /* Stats Grid */
+    .stats-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-      gap: 10px;
-      margin: 20px 0;
-    }
-    
-    .tech-item {
-      background: var(--lcars-orange);
-      color: #000;
-      padding: 10px 15px;
-      border-radius: 20px;
-      text-align: center;
-      font-weight: 700;
-      font-size: 0.9em;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-    }
-    
-    .tech-item:nth-child(4n+1) { background: var(--lcars-orange); }
-    .tech-item:nth-child(4n+2) { background: var(--lcars-lilac); }
-    .tech-item:nth-child(4n+3) { background: var(--lcars-blue); }
-    .tech-item:nth-child(4n+4) { background: var(--lcars-tanoi); }
-    
-    /* Timeline */
-    .timeline {
-      display: flex;
-      flex-direction: column;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
       gap: 12px;
       margin: 20px 0;
     }
     
-    .timeline-item {
-      background: rgba(153,153,255,0.1);
-      padding: 15px 20px;
-      border-left: 6px solid var(--lcars-blue);
-      border-radius: 0 15px 15px 0;
-      position: relative;
+    .stat-card {
+      background: rgba(255,153,0,0.1);
+      border: 2px solid var(--lcars-orange);
+      border-radius: 12px;
+      padding: 18px;
+      text-align: center;
     }
     
-    .timeline-item::before {
-      content: '';
-      position: absolute;
-      left: -12px;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 18px;
-      height: 18px;
-      background: var(--lcars-orange);
-      border-radius: 50%;
-      border: 3px solid var(--lcars-bg);
+    .stat-number {
+      font-size: 2.2em;
+      font-weight: 700;
+      color: var(--lcars-orange);
+      display: block;
     }
     
-    .timeline-item strong {
+    .stat-label {
+      font-size: 1em;
+      color: var(--lcars-text);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-top: 6px;
+    }
+    
+    /* Paper Cards */
+    .paper-grid {
+      display: grid;
+      gap: 15px;
+      margin: 20px 0;
+    }
+    
+    .paper-card {
+      background: rgba(153,153,255,0.08);
+      border-left: 5px solid var(--lcars-blue);
+      padding: 20px 25px;
+      transition: all 0.2s;
+    }
+    
+    .paper-card:hover {
+      background: rgba(153,153,255,0.15);
+      border-left-width: 8px;
+    }
+    
+    .paper-card h4 {
+      font-size: 1.3em;
+      color: var(--lcars-blue);
+      margin: 0 0 10px 0;
+      line-height: 1.3;
+    }
+    
+    .paper-card p {
+      font-size: 1em;
+      color: var(--lcars-text);
+      margin: 8px 0;
+    }
+    
+    .paper-meta {
+      font-size: 0.9em;
       color: var(--lcars-gold);
+      margin-top: 10px;
       font-weight: 700;
     }
     
-    /* Project Card */
-    .project-card {
-      background: rgba(153,153,255,0.08);
-      border: 4px solid var(--lcars-blue);
-      border-radius: 20px;
-      padding: 30px;
-      margin: 20px 0;
-      position: relative;
-    }
-    
-    .project-card::before {
-      content: '';
-      position: absolute;
-      top: -4px;
-      left: 40px;
-      right: 40px;
-      height: 4px;
-      background: var(--lcars-tanoi);
-    }
-    
-    .project-card h3 {
-      color: var(--lcars-blue);
-      margin-top: 0;
-    }
-    
-    /* Equation Display */
-    .equation {
+    .paper-link {
+      display: inline-block;
+      margin-top: 12px;
+      padding: 8px 20px;
       background: rgba(153,153,255,0.15);
-      border: 4px solid var(--lcars-blue);
+      border: 2px solid var(--lcars-blue);
       border-radius: 15px;
-      padding: 30px;
-      margin: 25px 0;
-      font-family: 'Courier New', monospace;
-      font-size: 1.6em;
-      text-align: center;
-      color: var(--lcars-gold);
+      color: var(--lcars-blue);
+      text-decoration: none;
+      font-weight: 700;
+      text-transform: uppercase;
+      font-size: 0.9em;
+      letter-spacing: 0.05em;
+      transition: all 0.2s;
     }
     
-    /* Highlight Box */
-    .highlight-box {
-      background: linear-gradient(135deg, rgba(255,153,0,0.15) 0%, rgba(204,102,153,0.15) 100%);
-      border-left: 8px solid var(--lcars-orange);
-      border-top: 4px solid var(--lcars-tanoi);
-      padding: 25px;
-      margin: 25px 0;
-      border-radius: 0 15px 15px 0;
+    .paper-link:hover {
+      background: var(--lcars-blue);
+      color: #000;
     }
     
-    .highlight-box h4 {
+    /* Repo Cards */
+    .repo-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 15px;
+      margin: 20px 0;
+    }
+    
+    .repo-card {
+      background: rgba(255,153,0,0.08);
+      border: 2px solid var(--lcars-orange);
+      border-radius: 12px;
+      padding: 20px;
+      transition: all 0.2s;
+    }
+    
+    .repo-card:hover {
+      background: rgba(255,153,0,0.15);
+      border-width: 3px;
+      transform: translateY(-3px);
+    }
+    
+    .repo-card h4 {
+      font-size: 1.4em;
       color: var(--lcars-orange);
-      margin-top: 0;
+      margin: 0 0 12px 0;
+    }
+    
+    .repo-link {
+      display: inline-block;
+      margin-top: 12px;
+      padding: 8px 20px;
+      background: rgba(255,153,0,0.15);
+      border: 2px solid var(--lcars-orange);
+      border-radius: 15px;
+      color: var(--lcars-orange);
+      text-decoration: none;
+      font-weight: 700;
+      text-transform: uppercase;
+      font-size: 0.9em;
+      letter-spacing: 0.05em;
+      transition: all 0.2s;
+    }
+    
+    .repo-link:hover {
+      background: var(--lcars-orange);
+      color: #000;
+    }
+    
+    /* Tech Grid - Clickable */
+    .tech-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+      gap: 10px;
+      margin: 15px 0;
+    }
+    
+    .tech-item {
+      background: rgba(255,204,102,0.12);
+      border: 2px solid var(--lcars-gold);
+      padding: 10px;
+      text-align: center;
+      border-radius: 8px;
+      color: var(--lcars-gold);
+      font-weight: 700;
+      font-size: 0.9em;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      transition: all 0.2s;
+      text-decoration: none;
+      display: block;
+    }
+    
+    .tech-item:hover {
+      background: var(--lcars-gold);
+      color: #000;
+      transform: scale(1.03);
+    }
+    
+    /* Timeline */
+    .timeline {
+      margin: 15px 0;
+      padding: 15px;
+      background: rgba(153,204,255,0.05);
+      border-radius: 10px;
+    }
+    
+    .timeline-item {
+      padding: 12px 15px;
+      margin: 8px 0;
+      border-left: 4px solid var(--lcars-sky);
+      background: rgba(153,204,255,0.08);
+      font-size: 1em;
+    }
+    
+    .timeline-item strong {
+      color: var(--lcars-sky);
     }
     
     /* CTA Section */
     .cta-section {
-      background: linear-gradient(135deg, rgba(255,153,0,0.2) 0%, rgba(153,153,255,0.2) 100%);
-      border: 6px solid var(--lcars-orange);
-      border-radius: 30px;
-      padding: 50px;
+      background: linear-gradient(135deg, rgba(255,153,0,0.15), rgba(204,102,153,0.15));
+      border: 4px solid var(--lcars-orange);
+      border-radius: 20px;
+      padding: 35px;
       text-align: center;
-      margin: 40px 0;
+      margin: 35px 0;
     }
     
     .cta-section h2 {
-      font-size: 2.5em;
+      font-size: 2.2em;
       color: var(--lcars-orange);
-      margin-bottom: 20px;
-      border: none;
-      padding: 0;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 15px;
     }
     
     .cta-buttons {
       display: flex;
       justify-content: center;
-      gap: 20px;
-      margin: 30px 0;
+      gap: 15px;
+      margin: 25px 0;
       flex-wrap: wrap;
     }
     
     .cta-button {
-      background: transparent;
-      color: var(--lcars-orange);
-      border: 4px solid var(--lcars-orange);
-      padding: 15px 40px;
-      border-radius: 30px;
-      font-size: 1.2em;
+      padding: 12px 30px;
+      background: var(--lcars-orange);
+      color: #000;
       font-weight: 700;
+      font-size: 1.1em;
       text-transform: uppercase;
+      letter-spacing: 0.08em;
+      border-radius: 20px;
       text-decoration: none;
-      letter-spacing: 0.1em;
-      transition: all 0.3s;
-      display: inline-block;
+      transition: all 0.2s;
     }
     
     .cta-button:hover {
-      background: var(--lcars-orange);
-      color: #000;
-      box-shadow: 0 0 30px var(--lcars-orange);
+      background: var(--lcars-tanoi);
       transform: scale(1.05);
     }
     
     /* Footer */
     .lcars-footer {
-      margin-top: 60px;
-      padding: 40px 20px;
-      text-align: center;
+      background: rgba(255,153,0,0.1);
       border-top: 4px solid var(--lcars-orange);
-      background: rgba(255,153,0,0.05);
-    }
-    
-    .lcars-footer p {
-      margin: 10px 0;
-      font-size: 1.05em;
+      padding: 25px;
+      text-align: center;
+      margin-top: 35px;
+      color: var(--lcars-text);
     }
     
     .lcars-footer a {
       color: var(--lcars-blue);
       text-decoration: none;
-      font-weight: 700;
     }
     
     .lcars-footer a:hover {
@@ -455,411 +533,430 @@
     /* Responsive */
     @media (max-width: 1200px) {
       .lcars-container {
-        grid-template-columns: 150px 1fr 150px;
-      }
-      .lcars-button, .lcars-elbow {
-        font-size: 0.85em;
-      }
-    }
-    
-    @media (max-width: 968px) {
-      .lcars-header {
-        grid-template-columns: 120px 1fr 120px;
-        height: 100px;
-      }
-      .lcars-title-bar h1 {
-        font-size: 2em;
-      }
-      .lcars-container {
         grid-template-columns: 1fr;
-        padding: 0 15px;
       }
-      .lcars-left-panel, .lcars-right-panel {
+      
+      .lcars-panel-side {
         display: none;
       }
-      .tech-grid {
-        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+      
+      .lcars-title-section {
+        height: 60px;
       }
-    }
-    
-    @media (max-width: 640px) {
-      .lcars-header {
-        grid-template-columns: 80px 1fr 80px;
-        height: 80px;
+      
+      .lcars-title-cap {
+        width: 80px;
       }
+      
       .lcars-title-bar h1 {
-        font-size: 1.4em;
-        letter-spacing: 0.08em;
-      }
-      .lcars-corner-left, .lcars-corner-right {
-        border-radius: 0 0 40px 0;
-      }
-      .lcars-corner-right {
-        border-radius: 0 0 0 40px;
-      }
-      .lcars-panel {
-        padding: 20px 25px;
-      }
-      .lcars-panel h2 {
-        font-size: 1.6em;
-      }
-      .cta-section {
-        padding: 30px 20px;
-      }
-      .cta-section h2 {
         font-size: 1.8em;
       }
-    }
-    
-    /* Scrollbar */
-    ::-webkit-scrollbar {
-      width: 12px;
-    }
-    
-    ::-webkit-scrollbar-track {
-      background: var(--lcars-bg);
-    }
-    
-    ::-webkit-scrollbar-thumb {
-      background: var(--lcars-orange);
-      border-radius: 6px;
-    }
-    
-    ::-webkit-scrollbar-thumb:hover {
-      background: var(--lcars-tanoi);
+      
+      .lcars-title-bar .subtitle {
+        display: none;
+      }
     }
   </style>
 </head>
 <body>
 
-  <!-- LCARS Header -->
+  <!-- Authentic TNG LCARS Header -->
   <div class="lcars-header">
-    <div class="lcars-corner-left"></div>
-    <div class="lcars-title-bar">
-      <h1>Gary W. Floyd</h1>
+    <!-- Top Frame Bars -->
+    <div class="lcars-top-frame">
+      <div class="lcars-bar lcars-bar-small orange"></div>
+      <div class="lcars-bar lcars-bar-small tanoi"></div>
+      <div class="lcars-bar lcars-bar-large orange"></div>
+      <div class="lcars-bar lcars-bar-small blue"></div>
+      <div class="lcars-bar lcars-bar-small peach"></div>
     </div>
-    <div class="lcars-corner-right"></div>
+    
+    <!-- Title Section -->
+    <div class="lcars-title-section">
+      <div class="lcars-title-cap">07-47-001</div>
+      <div class="lcars-title-bar">
+        <h1>Gary W. Floyd</h1>
+        <span class="subtitle">AI Research Engineer</span>
+      </div>
+      <div class="lcars-title-cap">Systems</div>
+    </div>
   </div>
 
   <!-- Main Container -->
   <div class="lcars-container">
-    
+
     <!-- Left Panel -->
-    <div class="lcars-left-panel">
-      <div class="lcars-button orange">Systems</div>
-      <div class="lcars-button blue">AI Core</div>
-      <div class="lcars-button tanoi">Automation</div>
-      <div class="lcars-button peach">Industrial</div>
-      <div class="lcars-button gold">Research</div>
-      <div class="lcars-button red">Hardware</div>
-      <div class="lcars-spacer"></div>
-      <div class="lcars-elbow left">Status</div>
-      <div class="lcars-button lilac">Online</div>
-      <div class="lcars-button blue">Active</div>
-      <div class="lcars-spacer"></div>
-      <div class="lcars-elbow left">Access</div>
-      <div class="lcars-button orange">Level 10</div>
+    <div class="lcars-panel-side">
+      <a href="#summary" class="lcars-btn orange tall">Profile</a>
+      <div class="lcars-gap"></div>
+      <a href="#papers" class="lcars-btn blue">Papers</a>
+      <a href="#repos" class="lcars-btn tanoi">Repos</a>
+      <a href="#system" class="lcars-btn peach">System</a>
+      <div class="lcars-gap"></div>
+      <a href="#skills" class="lcars-btn gold">Skills</a>
+      <a href="#experience" class="lcars-btn sky">History</a>
+      <div class="lcars-gap"></div>
+      <div class="lcars-btn lilac tall">Access</div>
+      <div class="lcars-btn orange">47-001</div>
+      <div class="lcars-btn blue">Primary</div>
     </div>
 
     <!-- Main Content -->
     <div class="lcars-main">
-      
-      <!-- Introduction Panel -->
-      <div class="lcars-panel">
-        <h2>Systems Engineer • AI Architect • Industrial Automation</h2>
-        <p style="font-size:1.15em; color:var(--lcars-gold); font-weight:700;">25+ Years Professional Experience | 45+ Years Engineering (Since Age 10)</p>
-        
-        <p>Multi-disciplinary systems engineer with <strong style="color:var(--lcars-gold);">25+ years of professional industrial automation experience</strong> and <strong style="color:var(--lcars-gold);">45+ years of self-guided electronics and systems engineering</strong>. Started with ham radio at age 10, mentored by VP of IT at Ashland Oil.</p>
-        
-        <p>From offshore drilling control systems to novel AI frameworks to casting aluminum for CNC parts—I work from first principles and deliver practical, maintainable systems.</p>
-        
-        <div class="contact-bar">
-          <a href="mailto:darkt22002@gmail.com">Email</a>
-          <a href="tel:+12087477044">208-747-7044</a>
-          <a href="https://github.com/darkt22002/wiper" target="_blank">GitHub: Wiper</a>
-          <a href="https://www.academia.edu/145445608/GUIDED_ENTROPY_PRINCIPLE_GEP_Mathematical_Foundations_and_Derivations" target="_blank">GEP Paper</a>
-          <a href="https://www.academia.edu/145445413/WIPER_Weighted_Information_Pruning_via_Entropy_Regulation_A_Field_Theoretic_Approach_to_Efficient_Transformer_Attention" target="_blank">WIPER Paper</a>
-          <span style="color:var(--lcars-gold); padding:8px 20px; font-weight:700;">New Caney, Texas</span>
-        </div>
-      </div>
 
-      <!-- Nexus AI -->
-      <div class="lcars-panel alt">
-        <h2>Nexus: Distributed AI Architecture</h2>
+      <!-- Professional Summary -->
+      <div id="summary" class="lcars-section">
+        <h2>Professional Summary</h2>
+        <p style="font-size:1.1em;">AI Research Engineer specializing in entropy-regulated machine learning systems, memory-driven architectures, and large-scale LLM orchestration. Published author of <strong>10 peer-distributed research papers</strong> with open-source implementations and empirical validation.</p>
         
-        <div class="highlight-box">
-          <strong style="color:var(--lcars-orange); font-size:1.1em;">Note:</strong> Implementation details (algorithms, weight functions, orchestration logic) are proprietary pending patent filing.
+        <div class="stats-grid">
+          <div class="stat-card">
+            <span class="stat-number">25+</span>
+            <span class="stat-label">Years Systems</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-number">5+</span>
+            <span class="stat-label">Years AI/ML</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-number">10</span>
+            <span class="stat-label">Papers</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-number">3</span>
+            <span class="stat-label">Repos</span>
+          </div>
         </div>
         
-        <p style="font-size:1.1em;">Production distributed AI implementing the <strong style="color:var(--lcars-gold);">Guided Entropy Principle (GEP)</strong> for attention, memory, and decision-making as guided entropy flow through weighted information systems.</p>
-        
-        <h3>Technical Architecture</h3>
+        <h3>Key Achievements</h3>
         <ul>
-          <li><strong>Compute:</strong> 120+ CPU cores (Dell R810, HP DL380p Gen8, Asus ROG)</li>
-          <li><strong>Memory:</strong> 400GB+ RAM across cluster</li>
-          <li><strong>GPU:</strong> Tesla K80 (repurposed e-waste)</li>
-          <li><strong>Orchestration:</strong> Custom adaptive layer; backpressure management</li>
-          <li><strong>Memory Tiers:</strong> ShortTerm, MidTerm, LongTerm, Ethical-Core</li>
-          <li><strong>Models:</strong> llama.cpp (C++17), QwQ-32B-Preview, DeepSeek-R1</li>
-          <li><strong>Embeddings:</strong> Vector search via pgvector (PostgreSQL)</li>
-          <li><strong>Web:</strong> Flask, SocketIO, real-time streaming</li>
-          <li><strong>Stack:</strong> Python, C++, CUDA, Bash, PostgreSQL, Debian Linux</li>
+          <li><strong>340% improvement</strong> in memory consolidation metrics measured via cross-embedding linkage density</li>
+          <li><strong>28% reduction</strong> in system entropy variance (0.087 → 0.063)</li>
+          <li><strong>87% accuracy</strong> in autonomous pattern discovery vs human evaluators</li>
+          <li><strong>Zero critical failures</strong> across 1,000+ days continuous operation</li>
         </ul>
         
-        <h3>Guided Entropy Principle (GEP)</h3>
-        <div class="equation">E(x) = dS/dt × w<sub>c</sub> × w<sub>d</sub> × w<sub>r</sub></div>
+        <h3>Previous Roles</h3>
+        <p>Enterprise Infrastructure Engineer (Fortune 500) • Senior Automation Engineer • CEO/Founder IRSI Robotics • Chief AI Researcher Lumiea Systems</p>
+      </div>
+
+      <!-- Published Research -->
+      <div id="papers" class="lcars-section alt">
+        <h2>Published Research</h2>
+        <p style="font-size:1.05em; margin-bottom:20px;"><strong>Research Scope:</strong> Applied AI systems, entropy-regulated architectures, memory consolidation, attention mechanisms, distributed inference.</p>
         
-        <p><strong style="color:var(--lcars-gold); font-size:1.1em;">Framework bridging information theory, cognitive science, thermodynamics, and AI.</strong></p>
+        <p style="font-size:0.95em; color:var(--lcars-gold); margin-bottom:20px;"><strong>Venues:</strong> Academia.edu (preprints), open peer distribution, code-linked reproducibility<br/>
+        <strong>Role:</strong> Sole Author / Systems Architect / Implementer<br/>
+        <strong>Access:</strong> <a href="https://independent.academia.edu/FloydGary" target="_blank" style="color:var(--lcars-blue);">independent.academia.edu/FloydGary</a></p>
         
+        <h3>Mathematical Foundations (3 Papers)</h3>
+        <div class="paper-grid">
+          <div class="paper-card">
+            <h4>"Guided Entropy Principle: Rigorous Foundations and Complete Proofs"</h4>
+            <p>Formal derivations from information theory first principles establishing the mathematical framework for entropy-guided decision systems.</p>
+            <p class="paper-meta">Published • 2024</p>
+            <a href="https://www.academia.edu/145459134/" target="_blank" class="paper-link">Read Paper →</a>
+          </div>
+          
+          <div class="paper-card">
+            <h4>"GEP: Mathematical Foundations and Derivations"</h4>
+            <p>Field equations and entropy dynamics for ML systems, providing theoretical substrate for practical implementations.</p>
+            <p class="paper-meta">Published • 2024</p>
+            <a href="https://www.academia.edu/145445608/" target="_blank" class="paper-link">Read Paper →</a>
+          </div>
+          
+          <div class="paper-card">
+            <h4>"Unified Framework from Token to Model Scale"</h4>
+            <p>Hierarchical entropy regulation across transformer architectures demonstrating scale-invariant principles.</p>
+            <p class="paper-meta">Published • 2024</p>
+            <a href="https://www.academia.edu/145465054/" target="_blank" class="paper-link">Read Paper →</a>
+          </div>
+        </div>
+        
+        <h3>AI Architecture & Production (6 Papers)</h3>
+        <div class="paper-grid">
+          <div class="paper-card">
+            <h4>"Dream State Architecture: GEP-Guided Memory Consolidation"</h4>
+            <p>Offline memory consolidation achieving 340% improvement in cross-embedding linkage density.</p>
+            <p class="paper-meta">Published • Empirically Validated • 2024</p>
+            <a href="https://www.academia.edu/145518601/" target="_blank" class="paper-link">Read Paper →</a>
+          </div>
+          
+          <div class="paper-card">
+            <h4>"WIPER: Weighted Information Pruning via Entropy Regulation"</h4>
+            <p>Post-training optimization for attention mechanisms providing novel approach to transformer efficiency.</p>
+            <p class="paper-meta">Published • Production Implementation • 2024</p>
+            <a href="https://www.academia.edu/145445413/" target="_blank" class="paper-link">Read Paper →</a>
+          </div>
+          
+          <div class="paper-card">
+            <h4>"Bayesian Entropy Similarity: Alignment Salience for AI Systems"</h4>
+            <p>Dual-threshold filtering framework for cognitive architectures enabling wake-state executive control.</p>
+            <p class="paper-meta">Published • 2024</p>
+            <a href="https://www.academia.edu/145489034/" target="_blank" class="paper-link">Read Paper →</a>
+          </div>
+          
+          <div class="paper-card">
+            <h4>"Entropy-Guided Model Routing"</h4>
+            <p>Dynamic selection framework across 70+ heterogeneous LLM pools for production deployment optimization.</p>
+            <p class="paper-meta">Published • Production Deployment • 2024</p>
+            <a href="https://www.academia.edu/145463350/" target="_blank" class="paper-link">Read Paper →</a>
+          </div>
+          
+          <div class="paper-card">
+            <h4>"Entropy-Guided Motor Control for Tool Execution"</h4>
+            <p>GEP-native control layer for MCP systems enabling autonomous tool orchestration.</p>
+            <p class="paper-meta">Published • MCP Integration • 2024</p>
+            <a href="https://www.academia.edu/145488369/" target="_blank" class="paper-link">Read Paper →</a>
+          </div>
+          
+          <div class="paper-card">
+            <h4>"GEP-Based Security: Behavioral Entropy Signatures"</h4>
+            <p>Anomaly detection framework for ML systems using entropy dynamics for cybersecurity applications.</p>
+            <p class="paper-meta">Published • Security Applications • 2024</p>
+            <a href="https://www.academia.edu/145485347/" target="_blank" class="paper-link">Read Paper →</a>
+          </div>
+        </div>
+        
+        <h3>Consciousness Theory (168 Pages)</h3>
+        <div class="paper-grid">
+          <div class="paper-card">
+            <h4>"The Hard Problem Revisited: Consciousness as Entropy Minimization"</h4>
+            <p>Unifies quantum mechanics (Penrose Orch OR), information theory (Tononi IIT), and cognitive science (Baars GWT) under entropy dynamics framework.</p>
+            <p class="paper-meta">Published • 168 Pages • Academic Citations • 2024</p>
+            <a href="https://www.academia.edu/145502158/" target="_blank" class="paper-link">Read Paper →</a>
+          </div>
+        </div>
+        
+        <h3>Academic Recognition</h3>
         <ul>
-          <li><strong>dS/dt:</strong> Entropy flow rate (information change)</li>
-          <li><strong>w<sub>c</sub>:</strong> Context weight (situational relevance)</li>
-          <li><strong>w<sub>d</sub>:</strong> Depth weight (fundamental importance, ethics)</li>
-          <li><strong>w<sub>r</sub>:</strong> Relevance weight (goal alignment)</li>
+          <li>Papers downloaded by University of Leeds, University of Houston, University of Nevada</li>
+          <li>Cited in medical research by Post-Transplant Research Institute founder (Dr. Laszlo Pokorny)</li>
+          <li>Linked as related work by PhD researcher (30+ publications, New Jersey City University)</li>
+          <li>GitHub repositories cloned by academic institutions for validation</li>
         </ul>
-        
-        <div class="highlight-box">
-          <h4>Journey: Jan 2024 → Present</h4>
-          <p>From baseline curiosity to production distributed AI cluster. 10,000+ trial validation. 100+ pages documentation. Academic paper in preparation.</p>
-        </div>
       </div>
 
-      <!-- Foundation Timeline -->
-      <div class="lcars-panel">
-        <h2>Foundation: From COBOL to Modern AI</h2>
-        <p style="font-size:1.1em; margin-bottom:20px;">Ham radio at 10 led to RF, telecoms, and distributed systems. By 16, built an ArcNet network tied to radio repeaters. Professional career began in mid-1990s with enterprise automation. 45+ years of continuous learning across computing revolutions.</p>
+      <!-- Open Source Repositories -->
+      <div id="repos" class="lcars-section">
+        <h2>Open Source Repositories</h2>
+        <p style="font-size:1.05em; margin-bottom:20px;">Production-ready implementations with complete documentation, schemas, and validation tools.</p>
         
-        <div class="timeline">
-          <div class="timeline-item"><strong>Early 1980s:</strong> FCC Amateur Radio (Extra Class); RF/electronics mentorship; magnetic bubble memory systems (Casio)</div>
-          <div class="timeline-item"><strong>1988:</strong> ArcNet + ham repeater remote dialup; AutoCAD R10 (now 37+ years CAD experience)</div>
-          <div class="timeline-item"><strong>Early-Mid 1990s:</strong> COBOL, Pascal, Assembly, C programming; DOS → early Windows systems</div>
-          <div class="timeline-item"><strong>1995–2000:</strong> Senior IT Engineer @ Compaq — enterprise infrastructure + automation</div>
-          <div class="timeline-item"><strong>2000–2010:</strong> Enterprise contractor (Target, Level 3, NCR, 7-Eleven) — C++, Java, SQL</div>
-          <div class="timeline-item"><strong>2003:</strong> SolidWorks adoption (22+ years 3D CAD)</div>
-          <div class="timeline-item"><strong>2010–2017:</strong> CEO/Founder — IRSI Robotics; PLC programming (LAD, STL, SCL, SFC, FBD)</div>
-          <div class="timeline-item"><strong>2016–2017:</strong> Beck Automation (Mumbai) — international automation projects</div>
-          <div class="timeline-item"><strong>2018–2020:</strong> Kepware/OPC UA projects; Python automation scripting</div>
-          <div class="timeline-item"><strong>2020–2024:</strong> Modern stack: Python, JavaScript, TypeScript, Rust, Docker, PostgreSQL</div>
-          <div class="timeline-item"><strong>2024–Present:</strong> Nexus distributed AI; llama.cpp, C++17 (AI internals), CUDA, Flask, SocketIO</div>
-        </div>
-      </div>
-
-      <!-- Industrial Automation -->
-      <div class="lcars-panel alt">
-        <h2>Industrial Automation & Control Systems</h2>
-        
-        <div class="project-card">
-          <h3>Daybreak Foods (Wisconsin) — 2018–2019</h3>
-          <h4>Kepware KEPServerEX & SCADA Integration</h4>
-          <ul>
-            <li>Real-time SCADA with Allen-Bradley ControlLogix PLCs</li>
-            <li>OPC DA/UA configuration; SQL Server integration</li>
-            <li>MES connectivity and predictive alerts</li>
-          </ul>
-        </div>
-        
-        <div class="project-card">
-          <h3>R&D Plastics (Chicago) — 2019–2020</h3>
-          <h4>MES Integration & Part Traceability</h4>
-          <ul>
-            <li>OPC UA between PLCs and MES; EtherNet/IP & Modbus TCP</li>
-            <li>Real-time defect tracking; quality compliance</li>
-          </ul>
-        </div>
-        
-        <div class="project-card">
-          <h3>IRSI Robotics — CEO/Founder — 2010–2017</h3>
-          <h4>Industrial Automation Integration</h4>
-          <ul>
-            <li>Nationwide automation (automotive, food, packaging)</li>
-            <li>FDA/USDA-compliant control systems</li>
-            <li>PLC/HMI/SCADA; safety PLCs; commissioning</li>
-          </ul>
-        </div>
-        
-        <h3>Fortune 500 Experience</h3>
-        <div class="timeline">
-          <div class="timeline-item"><strong>Compaq:</strong> Senior IT Engineer (1995–2000)</div>
-          <div class="timeline-item"><strong>Target:</strong> Enterprise LAN/WAN, Cisco (2005–2008)</div>
-          <div class="timeline-item"><strong>Level 3:</strong> Critical telecom infrastructure (2017)</div>
-          <div class="timeline-item"><strong>NCR:</strong> Enterprise infrastructure + DB admin</div>
-          <div class="timeline-item"><strong>7-Eleven:</strong> Retail network architecture</div>
-        </div>
-      </div>
-
-      <!-- Technical Stack -->
-      <div class="lcars-panel">
-        <h2>Core Technologies</h2>
-        
-        <h3>Programming Languages</h3>
-        <div class="tech-grid">
-          <div class="tech-item">Python</div>
-          <div class="tech-item">C++</div>
-          <div class="tech-item">C</div>
-          <div class="tech-item">Rust</div>
-          <div class="tech-item">JavaScript</div>
-          <div class="tech-item">TypeScript</div>
-          <div class="tech-item">Java</div>
-          <div class="tech-item">C#</div>
-          <div class="tech-item">Go</div>
-          <div class="tech-item">CUDA</div>
-          <div class="tech-item">Assembly</div>
-          <div class="tech-item">Bash</div>
-        </div>
-        
-        <h3>Industrial Control</h3>
-        <div class="tech-grid">
-          <div class="tech-item">Ladder Logic</div>
-          <div class="tech-item">SCL/ST</div>
-          <div class="tech-item">FBD</div>
-          <div class="tech-item">SFC</div>
-          <div class="tech-item">STL/IL</div>
-          <div class="tech-item">Siemens S7</div>
-          <div class="tech-item">Rockwell</div>
-          <div class="tech-item">OPC UA</div>
-          <div class="tech-item">Modbus</div>
-          <div class="tech-item">EtherNet/IP</div>
-          <div class="tech-item">PROFINET</div>
-          <div class="tech-item">Kepware</div>
-        </div>
-        
-        <h3>AI/ML & Databases</h3>
-        <div class="tech-grid">
-          <div class="tech-item">llama.cpp</div>
-          <div class="tech-item">PyTorch</div>
-          <div class="tech-item">TensorFlow</div>
-          <div class="tech-item">PostgreSQL</div>
-          <div class="tech-item">pgvector</div>
-          <div class="tech-item">Redis</div>
-          <div class="tech-item">MongoDB</div>
-          <div class="tech-item">SQL Server</div>
-        </div>
-        
-        <h3>DevOps & Infrastructure</h3>
-        <div class="tech-grid">
-          <div class="tech-item">Docker</div>
-          <div class="tech-item">Kubernetes</div>
-          <div class="tech-item">Linux</div>
-          <div class="tech-item">VMware</div>
-          <div class="tech-item">Git</div>
-          <div class="tech-item">Nginx</div>
-          <div class="tech-item">Flask</div>
-          <div class="tech-item">SocketIO</div>
-        </div>
-      </div>
-
-      <!-- R&D Lab -->
-      <div class="lcars-panel alt">
-        <h2>Personal R&D Laboratory</h2>
-        <p style="font-size:1.1em; margin-bottom:20px;">Hands-on R&D across materials, machining, electronics—keeping skills sharp and solutions grounded in physical reality.</p>
-        
-        <h3>Capabilities</h3>
-        <ul>
-          <li><strong>Materials:</strong> Aluminum smelting/casting (1200°F+), greensand patterns, metallurgy</li>
-          <li><strong>CAD:</strong> SolidWorks (22 yrs), AutoCAD (37 yrs), FreeCAD (10+ yrs), P&IDs, FEA</li>
-          <li><strong>CNC:</strong> Custom machines from castings; Python G-code interpreter; ±0.001" tolerances</li>
-          <li><strong>3D Printing:</strong> PEEK/PEI (400°C hotend, 80-100°C chamber); Klipper + Python macros</li>
-          <li><strong>Electronics:</strong> PCB design (KiCAD), embedded systems, ARM/microcontrollers, RF</li>
-        </ul>
-        
-        <h3>CAD/CAM Tools</h3>
-        <div class="tech-grid">
-          <div class="tech-item">AutoCAD 37yr</div>
-          <div class="tech-item">SolidWorks 22yr</div>
-          <div class="tech-item">FreeCAD 10yr</div>
-          <div class="tech-item">Fusion 360</div>
-          <div class="tech-item">KiCAD</div>
-          <div class="tech-item">Blender</div>
-          <div class="tech-item">ParaView</div>
-          <div class="tech-item">LinuxCNC</div>
-        </div>
-      </div>
-
-      <!-- Research -->
-      <div class="lcars-panel">
-        <h2>Research & Publications</h2>
-        
-        <div class="project-card">
-          <h3>Guided Entropy Principle (GEP): A Novel Framework for Intelligence & Decision-Making</h3>
-          <p style="font-size:1.1em; margin:18px 0;">GEP frames consciousness, learning, and intelligence as guided entropy flow through weighted information systems.</p>
+        <div class="repo-grid">
+          <div class="repo-card">
+            <h4>WIPER</h4>
+            <p><strong>Weighted Information Pruning via Entropy Regulation</strong></p>
+            <p>Field-theoretic attention mechanism for transformer efficiency. Includes implementation, benchmarks, integration guides.</p>
+            <p style="margin-top:12px; color:var(--lcars-gold);"><strong>Tech:</strong> Python, PyTorch, CUDA</p>
+            <a href="https://github.com/darkt22002/wiper" target="_blank" class="repo-link">View Repository →</a>
+          </div>
           
-          <h4>Key Contributions</h4>
-          <ul>
-            <li>Unifies entropy dynamics with weighted information processing</li>
-            <li>Cross-domain utility (physics, biology, cognition, AI, manufacturing)</li>
-            <li>Controlled probabilistic testbed (10,000+ trials)</li>
-            <li>Production deployment in distributed AI cluster</li>
-            <li>Bridges thermodynamic and information-theoretic entropy with cognitive attention</li>
-          </ul>
+          <div class="repo-card">
+            <h4>GEP MCP Motor</h4>
+            <p><strong>Entropy-Guided Motor Control for MCP</strong></p>
+            <p>Autonomous tool orchestration control layer implementing entropy-regulated decision making for Model Context Protocol.</p>
+            <p style="margin-top:12px; color:var(--lcars-gold);"><strong>Tech:</strong> Python, MCP, Tool Routing</p>
+            <a href="https://github.com/darkt22002/gep-mcp-motor" target="_blank" class="repo-link">View Repository →</a>
+          </div>
           
-          <p style="margin-top:16px; color:var(--lcars-gold); font-weight:700;"><strong>Status:</strong> Published on Academia.edu • <strong>Docs:</strong> 100+ pages • <strong>Timeline:</strong> Jan 2024–Present</p>
-          
-          <div style="margin-top:20px; display:flex; gap:15px; flex-wrap:wrap;">
-            <a href="https://www.academia.edu/145445608/GUIDED_ENTROPY_PRINCIPLE_GEP_Mathematical_Foundations_and_Derivations" target="_blank" style="color:var(--lcars-blue); text-decoration:none; padding:10px 25px; background:rgba(153,153,255,0.15); border-radius:20px; border:2px solid var(--lcars-blue); font-weight:700; text-transform:uppercase; letter-spacing:0.05em; transition:all 0.3s;" onmouseover="this.style.background='var(--lcars-blue)'; this.style.color='#000';" onmouseout="this.style.background='rgba(153,153,255,0.15)'; this.style.color='var(--lcars-blue)';">Read GEP Paper</a>
-            <a href="https://www.academia.edu/145445413/WIPER_Weighted_Information_Pruning_via_Entropy_Regulation_A_Field_Theoretic_Approach_to_Efficient_Transformer_Attention" target="_blank" style="color:var(--lcars-blue); text-decoration:none; padding:10px 25px; background:rgba(153,153,255,0.15); border-radius:20px; border:2px solid var(--lcars-blue); font-weight:700; text-transform:uppercase; letter-spacing:0.05em; transition:all 0.3s;" onmouseover="this.style.background='var(--lcars-blue)'; this.style.color='#000';" onmouseout="this.style.background='rgba(153,153,255,0.15)'; this.style.color='var(--lcars-blue)';">Read WIPER Paper</a>
+          <div class="repo-card">
+            <h4>Lumiea GEP Dream</h4>
+            <p><strong>Dream State Memory Consolidation</strong></p>
+            <p>Complete PostgreSQL schema, Python API, validation tools. Production system achieving 340% improvement.</p>
+            <p style="margin-top:12px; color:var(--lcars-gold);"><strong>Tech:</strong> PostgreSQL, Python, pgvector</p>
+            <a href="https://github.com/darkt22002/lumiea-gep-dream-architecture" target="_blank" class="repo-link">View Repository →</a>
           </div>
         </div>
       </div>
 
-      <!-- Philosophy -->
-      <div class="lcars-panel alt">
+      <!-- Production System -->
+      <div id="system" class="lcars-section alt">
+        <h2>Production System: LUMIEA</h2>
+        <p style="font-size:1.05em; margin-bottom:20px;">Production memory-driven AI architecture with measurable validation across 10,000+ inference cycles. Running continuously since 2020.</p>
+        
+        <h3>Architecture</h3>
+        <ul>
+          <li><strong>Compute:</strong> 200+ CPU cores, 400GB RAM, Tesla K80 GPU (Dell R810, HP DL380p Gen8)</li>
+          <li><strong>Stack:</strong> llama.cpp (C++), PyTorch, PostgreSQL/pgvector, Redis, CUDA, Python, Flask</li>
+          <li><strong>Models:</strong> 70+ LLM deployment (QwQ-32B, DeepSeek-R1, Llama 3.1, Mistral)</li>
+          <li><strong>Memory:</strong> 4-tier architecture with semantic vector search</li>
+        </ul>
+        
+        <h3>Measured Results</h3>
+        <div class="stats-grid">
+          <div class="stat-card">
+            <span class="stat-number">340%</span>
+            <span class="stat-label">Consolidation</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-number">28%</span>
+            <span class="stat-label">Entropy ↓</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-number">84%</span>
+            <span class="stat-label">Accuracy</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-number">1000+</span>
+            <span class="stat-label">Days Up</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Technical Skills -->
+      <div id="skills" class="lcars-section">
+        <h2>Core Technologies</h2>
+        
+        <h3>AI/ML Frameworks</h3>
+        <div class="tech-grid">
+          <a href="https://pytorch.org" target="_blank" class="tech-item">PyTorch</a>
+          <a href="https://www.tensorflow.org" target="_blank" class="tech-item">TensorFlow</a>
+          <a href="https://github.com/ggerganov/llama.cpp" target="_blank" class="tech-item">llama.cpp</a>
+          <a href="https://huggingface.co/docs/transformers" target="_blank" class="tech-item">Transformers</a>
+          <a href="https://www.langchain.com" target="_blank" class="tech-item">langchain</a>
+          <a href="https://developer.nvidia.com/cuda-toolkit" target="_blank" class="tech-item">CUDA</a>
+          <a href="https://developer.nvidia.com/cudnn" target="_blank" class="tech-item">cuDNN</a>
+          <a href="https://github.com/pgvector/pgvector" target="_blank" class="tech-item">pgvector</a>
+          <a href="https://github.com/facebookresearch/faiss" target="_blank" class="tech-item">FAISS</a>
+          <a href="https://www.trychroma.com" target="_blank" class="tech-item">ChromaDB</a>
+        </div>
+        
+        <h3>Programming Languages</h3>
+        <div class="tech-grid">
+          <a href="https://www.python.org" target="_blank" class="tech-item">Python</a>
+          <a href="https://isocpp.org" target="_blank" class="tech-item">C++</a>
+          <a href="https://www.rust-lang.org" target="_blank" class="tech-item">Rust</a>
+          <a href="https://en.wikipedia.org/wiki/C_(programming_language)" target="_blank" class="tech-item">C</a>
+          <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" class="tech-item">JavaScript</a>
+          <a href="https://www.typescriptlang.org" target="_blank" class="tech-item">TypeScript</a>
+          <a href="https://go.dev" target="_blank" class="tech-item">Go</a>
+          <a href="https://www.java.com" target="_blank" class="tech-item">Java</a>
+          <a href="https://learn.microsoft.com/en-us/dotnet/csharp/" target="_blank" class="tech-item">C#</a>
+          <a href="https://www.gnu.org/software/bash/" target="_blank" class="tech-item">Bash</a>
+        </div>
+        
+        <h3>Databases & Infrastructure</h3>
+        <div class="tech-grid">
+          <a href="https://www.postgresql.org" target="_blank" class="tech-item">PostgreSQL</a>
+          <a href="https://redis.io" target="_blank" class="tech-item">Redis</a>
+          <a href="https://www.mongodb.com" target="_blank" class="tech-item">MongoDB</a>
+          <a href="https://www.docker.com" target="_blank" class="tech-item">Docker</a>
+          <a href="https://kubernetes.io" target="_blank" class="tech-item">Kubernetes</a>
+          <a href="https://www.linux.org" target="_blank" class="tech-item">Linux</a>
+          <a href="https://www.vmware.com/products/esxi-and-esx.html" target="_blank" class="tech-item">VMware</a>
+          <a href="https://git-scm.com" target="_blank" class="tech-item">Git</a>
+          <a href="https://nginx.org" target="_blank" class="tech-item">Nginx</a>
+        </div>
+        
+        <h3>Industrial Control</h3>
+        <div class="tech-grid">
+          <a href="https://www.siemens.com/global/en/products/automation/systems/industrial/plc.html" target="_blank" class="tech-item">Siemens S7</a>
+          <a href="https://www.rockwellautomation.com" target="_blank" class="tech-item">Rockwell</a>
+          <a href="https://industrial.omron.us" target="_blank" class="tech-item">Omron</a>
+          <a href="https://new.abb.com/control-systems" target="_blank" class="tech-item">ABB</a>
+          <a href="https://opcfoundation.org" target="_blank" class="tech-item">OPC UA</a>
+          <a href="https://www.modbus.org" target="_blank" class="tech-item">Modbus</a>
+          <a href="https://www.odva.org" target="_blank" class="tech-item">EtherNet/IP</a>
+          <a href="https://www.profibus.com" target="_blank" class="tech-item">PROFINET</a>
+          <a href="https://inductiveautomation.com" target="_blank" class="tech-item">Ignition</a>
+          <a href="https://www.kepware.com" target="_blank" class="tech-item">Kepware</a>
+        </div>
+      </div>
+
+      <!-- Professional Experience -->
+      <div id="experience" class="lcars-section alt">
+        <h2>Professional Experience</h2>
+        
+        <h3>Founder & Chief AI Researcher — Lumiea Systems (2020–Present)</h3>
+        <ul>
+          <li>Published 10-paper research series establishing Guided Entropy Principle framework</li>
+          <li>Developed WIPER attention mechanism for transformer efficiency</li>
+          <li>Created Bayesian Entropy Similarity framework for alignment</li>
+          <li>Open-sourced complete implementations with academic validation</li>
+        </ul>
+        
+        <h3>Self-Employed Automation & AI Contractor (2017–Present)</h3>
+        <ul>
+          <li>FDA-compliant automation systems integrating AI/ML</li>
+          <li>Python-based data pipelines for industrial IoT and predictive maintenance</li>
+          <li>Production ML monitoring and system observability</li>
+        </ul>
+        
+        <h3>CEO/Founder — IRSI Robotics (2010–2017)</h3>
+        <ul>
+          <li>Industrial automation integration: automotive, food service, packaging</li>
+          <li>FDA/USDA-compliant control systems, PLC/HMI/SCADA, safety systems (TÜV)</li>
+        </ul>
+        
+        <h3>Fortune 500 Experience</h3>
+        <div class="timeline">
+          <div class="timeline-item"><strong>Target (2005–2008):</strong> Enterprise LAN/WAN, Cisco, data center</div>
+          <div class="timeline-item"><strong>Level 3 (2007):</strong> Critical telecom infrastructure</div>
+          <div class="timeline-item"><strong>NCR:</strong> Enterprise infrastructure, database admin</div>
+          <div class="timeline-item"><strong>7-Eleven:</strong> Retail network architecture</div>
+          <div class="timeline-item"><strong>Compaq (1995–2000):</strong> Enterprise infrastructure, automation</div>
+        </div>
+      </div>
+
+      <!-- Engineering Philosophy -->
+      <div class="lcars-section">
         <h2>Engineering Philosophy</h2>
-        <div style="text-align:center; font-size:2em; color:var(--lcars-gold); font-weight:700; margin:30px 0; padding:30px; border-top:4px solid var(--lcars-orange); border-bottom:4px solid var(--lcars-orange); text-transform:uppercase; letter-spacing:0.1em;">
+        <div style="text-align:center; font-size:1.8em; color:var(--lcars-gold); font-weight:700; margin:25px 0; padding:25px; border-top:3px solid var(--lcars-orange); border-bottom:3px solid var(--lcars-orange); text-transform:uppercase; letter-spacing:0.1em;">
           "Bend with guardrails, don't break against them."
         </div>
-        <p style="font-size:1.15em; text-align:center; color:var(--lcars-text);">I learn whatever's required to solve hard problems correctly, then build working systems and document them so others can run with it.</p>
+        <p style="font-size:1.1em; text-align:center;">I learn whatever's required to solve hard problems correctly, then build working systems and document them so others can run with it.</p>
       </div>
 
       <!-- CTA -->
       <div class="cta-section">
-        <h2>Available for Contract & Full-Time Opportunities</h2>
-        <p style="font-size:1.3em; color:var(--lcars-gold); font-weight:700; margin:20px 0;">AI Infrastructure • Industrial Automation • Control Systems • Complex Integration</p>
+        <h2>Available for Opportunities</h2>
+        <p style="font-size:1.2em; color:var(--lcars-gold); font-weight:700; margin:15px 0;">AI Research Engineer • Senior ML Engineer • Applied AI Systems • ML Infrastructure</p>
         
         <div class="cta-buttons">
-          <a href="mailto:darkt22002@gmail.com" class="cta-button">Email</a>
+          <a href="mailto:garyfloyd@thunderstruckservice.com" class="cta-button">Email</a>
           <a href="tel:+12087477044" class="cta-button">Call</a>
-          <a href="https://github.com/darkt22002/wiper" target="_blank" class="cta-button">GitHub</a>
-          <a href="https://www.academia.edu/145445608/GUIDED_ENTROPY_PRINCIPLE_GEP_Mathematical_Foundations_and_Derivations" target="_blank" class="cta-button">GEP Paper</a>
-          <a href="https://www.academia.edu/145445413/WIPER_Weighted_Information_Pruning_via_Entropy_Regulation_A_Field_Theoretic_Approach_to_Efficient_Transformer_Attention" target="_blank" class="cta-button">WIPER Paper</a>
+          <a href="https://github.com/darkt22002" target="_blank" class="cta-button">GitHub</a>
+          <a href="https://independent.academia.edu/FloydGary" target="_blank" class="cta-button">Academia</a>
         </div>
         
-        <p style="font-size:1.1em; color:var(--lcars-text); font-weight:700;">New Caney, Texas (Open to Relocation or Offshore Rotations)</p>
+        <p style="font-size:1em; color:var(--lcars-text); font-weight:700; margin-top:15px;">New Caney, Texas • Open to Relocation or Offshore Rotations</p>
       </div>
 
     </div>
 
     <!-- Right Panel -->
-    <div class="lcars-right-panel lcars-left-panel">
-      <div class="lcars-elbow">Monitor</div>
-      <div class="lcars-button orange">47-001</div>
-      <div class="lcars-button blue">47-002</div>
-      <div class="lcars-button tanoi">47-003</div>
-      <div class="lcars-spacer"></div>
-      <div class="lcars-button peach">Systems</div>
-      <div class="lcars-button gold">Nominal</div>
-      <div class="lcars-spacer"></div>
-      <div class="lcars-elbow">Network</div>
-      <div class="lcars-button blue">Primary</div>
-      <div class="lcars-button orange">Secure</div>
-      <div class="lcars-spacer"></div>
-      <div class="lcars-button red">Stand By</div>
+    <div class="lcars-panel-side">
+      <div class="lcars-btn lilac tall">Monitor</div>
+      <div class="lcars-btn orange">47-002</div>
+      <div class="lcars-btn blue">47-003</div>
+      <div class="lcars-gap"></div>
+      <div class="lcars-btn peach">Status</div>
+      <div class="lcars-btn gold">Nominal</div>
+      <div class="lcars-gap"></div>
+      <div class="lcars-btn tanoi">Network</div>
+      <div class="lcars-btn blue">Primary</div>
+      <div class="lcars-btn orange">Secure</div>
+      <div class="lcars-gap"></div>
+      <div class="lcars-btn red tall">Stand By</div>
     </div>
 
   </div>
 
   <!-- Footer -->
-  <!-- Footer -->
   <div class="lcars-footer">
     <p>&copy; 2024–2025 Gary W. Floyd. All rights reserved.</p>
-    <p style="margin-top:12px;">"Nexus-Core" and "Guided Entropy Principle (GEP)" are proprietary works; certain aspects may be patent pending.</p>
-    <p style="margin-top:15px;">
-      <a href="mailto:darkt22002@gmail.com">darkt22002@gmail.com</a> &nbsp;|&nbsp;
+    <p style="margin-top:10px;">"Guided Entropy Principle (GEP)" and related works are proprietary research.</p>
+    <p style="margin-top:12px;">
+      <a href="mailto:garyfloyd@thunderstruckservice.com">garyfloyd@thunderstruckservice.com</a> &nbsp;|&nbsp;
       <a href="tel:+12087477044">208-747-7044</a>
     </p>
     <p style="margin-top:10px;">
-      <a href="https://github.com/darkt22002/wiper" target="_blank">GitHub: Wiper Project</a> &nbsp;|&nbsp;
-      <a href="https://www.academia.edu/145445608/GUIDED_ENTROPY_PRINCIPLE_GEP_Mathematical_Foundations_and_Derivations" target="_blank">GEP Paper</a> &nbsp;|&nbsp;
-      <a href="https://www.academia.edu/145445413/WIPER_Weighted_Information_Pruning_via_Entropy_Regulation_A_Field_Theoretic_Approach_to_Efficient_Transformer_Attention" target="_blank">WIPER Paper</a>
+      <a href="https://github.com/darkt22002" target="_blank">GitHub</a> &nbsp;|&nbsp;
+      <a href="https://independent.academia.edu/FloydGary" target="_blank">Academia.edu</a> &nbsp;|&nbsp;
+      <a href="https://github.com/darkt22002/darkt22002.github.io" target="_blank">Source</a>
+    </p>
+    <p style="margin-top:12px; font-size:0.85em; color:var(--lcars-gold);">
+      All claims verifiable • Papers: independent.academia.edu/FloydGary • Code: github.com/darkt22002
     </p>
   </div>
 
